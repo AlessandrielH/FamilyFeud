@@ -10,10 +10,10 @@ Prince Ndhlovu
 
 Project #2 - Family Feud
 Video Link - https://www.youtube.com/watch?v=fXcYgZP7z_Q
-Language:  Java, C++, Python
+Language:  C++
 Note: this version of the game will play slightly differently than the TV show. 
 
-Requirements
+Requirements:
 The game should have a menu of functions
 Option 1 - Instructions
 Option 2 - Play game
