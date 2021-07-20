@@ -13,5 +13,6 @@ public:
 	Game();
 	~Game();
 	void startPlaying(); 
+	void displayInstructions();
 	
 };
