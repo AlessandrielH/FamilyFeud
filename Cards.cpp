@@ -13,9 +13,17 @@ private:
 	map<string, int> points;
 
 public:
+
+
 	map<int, map<string, string>  > getCard(); 
 	void setQuestion();
 	vector<string> getAnswers(); 
 
 
 };
+
+void Card::setQuestion(){
+
+	quiz[1] = {{"Name a Reason People Might Change Their Name" }};
+
+}
