@@ -37,6 +37,7 @@ public:
 	
 	Team()
 	{
+		name="Please enter a name";
 		points[name]=0;
 	}
 };
