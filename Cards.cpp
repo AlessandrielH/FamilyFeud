@@ -8,22 +8,52 @@ using namespace std;
 class Cards{
 
 private:
-
-	map<int, map<string, vector<string> >  > quiz;
-	map<string, int> points;
+	//map<int, map<string, vector<string> >  > quiz;
+	//map<int, map< map<string, string>, map<string, vector<string> > > > quizy;
+	map<int, map<string, <string> > question;
+    map<int, map<string, vector<string> >  > answers;
+    map<string, int> points;
 
 public:
-
-
 	map<int, map<string, string>  > getCard(); 
 	void setQuestion();
-	vector<string> getAnswers(); 
-
-
-};
+	string getQuestion(int num);
+	vector<string> getAnswers(int); 
+}; 
 
 void Card::setQuestion(){
 
-	quiz[1] = {{"Name a Reason People Might Change Their Name" }};
+	question[0] = {{"questions", "Name a Reason People Might Change Their Name"}};
+	answers[0] = {{"answers", {"Got Married", "Their Name is Lame ", "Witness Protection", "Divorce"}}};
+	question[1] = {{"questions", "Name Something That Grows Faster Than You Want it To"}};
+	answers[1] = {{"answers", {"Hair/Unibrow", "Lawn/Weeds", "Kids/Babies", "Belly/Weight", "Nails", "Debt/Expenses"}}};
+	question[2] = {{"questions", "Name a Reason People Might Change Their Name"}};
+	answers[2] = {{"answers", {"Got Married", "Their Name is Lame ", "Witness Protection", "Divorce"}}};
+	question[3] = {{"questions", "Name a Reason People Might Change Their Name"}};
+	answers[3] = {{"answers", {"Got Married", "Their Name is Lame ", "Witness Protection", "Divorce"}}};
+	question[4] = {{"questions", "Name a Reason People Might Change Their Name"}};
+	answers[4] = {{"answers", {"Got Married", "Their Name is Lame ", "Witness Protection", "Divorce"}}};
+	question[5] = {{"questions", "Name a Reason People Might Change Their Name"}};
+	answers[5] = {{"answers", {"Got Married", "Their Name is Lame ", "Witness Protection", "Divorce"}}};
+	question[6] = {{"questions", "Name a Reason People Might Change Their Name"}};
+	answers[6] = {{"answers", {"Got Married", "Their Name is Lame ", "Witness Protection", "Divorce"}}};
+	question[7] = {{"questions", "Name a Reason People Might Change Their Name"}};
+	answers[7] = {{"answers", {"Got Married", "Their Name is Lame ", "Witness Protection", "Divorce"}}};
+	question[8] = {{"questions", "Name a Reason People Might Change Their Name"}};
+	answers[8] = {{"answers", {"Got Married", "Their Name is Lame ", "Witness Protection", "Divorce"}}};
+	question[9] = {{"questions", "Name a Reason People Might Change Their Name"}};
+	answers[9] = {{"answers", {"Got Married", "Their Name is Lame ", "Witness Protection", "Divorce"}}};
+	question[10] = {{"questions", "Name a Reason People Might Change Their Name"}};
+	answers[10] = {{"answers", {"Got Married", "Their Name is Lame ", "Witness Protection", "Divorce"}}};
+
+}
+
+string Card::getQuestion(int num){
+	return question[num]["questions"];
+}
+
+vector<string> Card::getAnswers(int num){
+
+	return answers[num]["answers"];
 
 }
