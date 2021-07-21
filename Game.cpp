@@ -16,7 +16,50 @@ public:
 	~Game();
 	void startPlaying(); 
 	void displayInstructions();
+	void displayMenu();
 	
+	
+	void startPlaying()
+	{
+		//initialize Cards Object
+		Cards cards= new Cards;
+		int menu;
+
+		do {
+			displayMenu();
+			cin >> menu;
+			if (menu == 1)
+			{
+				displayInstructions();
+			}
+			else if (menu == 2)//players start game
+			{
+
+			}
+			else if (menu == 3)//adds Card
+			{
+				cards.setQuestion();
+				cards.setAnswers();
+				cards.setPoints();
+				cards.verfiyCard();
+				cards.displayCards();
+			}
+			else if (menu == 4)//quit game
+			{
+				cout << "You have QUIT the game\n" << endl;
+				break;
+			}
+			else
+			{
+				cout << "Your choice was invalid. You must enter a value 1-4.\n";
+				cin.clear();
+				cin.ignore(10000, '\n');
+				menu = -1;
+			}
+		} while (menu < 4);
+		cout << "Thank you for playing!!" << endl;
+
+	}
 	
 	void displayInstructions()
 	{
