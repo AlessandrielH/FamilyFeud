@@ -16,12 +16,14 @@ private:
 
 public:
 	map<int, map<string, string>  > getCard(); 
-	void setQuestion();
+	 Cards();
+	 void setQuestion();
 	string getQuestion(int num);
 	vector<string> getAnswers(int); 
+	bool isCorrect(int,string);
 }; 
 
-void Card::setQuestion(){
+Card::Cards(){
 
 	question[0] = {{"questions", "Name a Reason People Might Change Their Name"}};
 	answers[0] = {{"answers", {"Got Married", "Their Name is Lame ", "Witness Protection", "Divorce"}}};
@@ -55,5 +57,21 @@ string Card::getQuestion(int num){
 vector<string> Card::getAnswers(int num){
 
 	return answers[num]["answers"];
-
 }
+
+bool isCorrect(int num,string ans){
+	bool correct = false;
+
+	for(int i =0; i < answers[0]["answers"].size(); i++){
+		if(ans == answers[0]["answers"][i]){
+			correct = true;
+			break;
+		}
+	} 
+
+	return correct; 
+}
+
+
+
+
