@@ -10,14 +10,14 @@ class Cards{
 private:
 	//map<int, map<string, vector<string> >  > quiz;
 	//map<int, map< map<string, string>, map<string, vector<string> > > > quizy;
-	map<int, map<string, <string> > question;
-    map<int, map<string, vector<string> >  > answers;
+	map<int, map<string, string> > question;
+    map<int, map<string, vector<string> >> answers;
     map<string, int> points;
 
 public:
-	map<int, map<string, string>  > getCard();  
-	 Cards();
-	 void setQuestion();
+	 
+	Cards();
+	void setQuestion();
 	string getQuestion(int num);
 	vector<string> getAnswers(int); 
 	bool isCorrect(int,string);
