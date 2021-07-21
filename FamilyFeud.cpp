@@ -7,5 +7,7 @@ using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    Game myGame = new Game; 
+    myGame.startPlaying();
+    return 0;
 }
