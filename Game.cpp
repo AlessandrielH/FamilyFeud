@@ -19,7 +19,7 @@ public:
 	void displayMenu();
 	
 	
-	void startPlaying()
+	void Game::startPlaying()
 	{
 		//initialize Cards Object
 		Cards cards= new Cards;
@@ -34,7 +34,11 @@ public:
 			}
 			else if (menu == 2)//players start game
 			{
-
+				//get Team names
+				//display number of answers
+				//display question
+				//ask for answer
+				//
 			}
 			else if (menu == 3)//adds Card
 			{
