@@ -21,6 +21,8 @@ public:
 	string getQuestion(int num);
 	vector<string> getAnswers(int); 
 	bool isCorrect(int,string);
+	int totalQuestions();
+	int totalAnswers(int);
 }; 
 
 Card::Cards(){
@@ -50,11 +52,11 @@ Card::Cards(){
 
 }
 
-string Card::getQuestion(int num){
+string Cards::getQuestion(int num){
 	return question[num]["questions"];
 }
 
-vector<string> Card::getAnswers(int num){
+vector<string> Cards::getAnswers(int num){
 
 	return answers[num]["answers"];
 }
@@ -72,3 +74,10 @@ bool isCorrect(int num,string ans){
 	return correct; 
 }
 
+int Cards::totalQuestions(){
+	return question.size();
+}
+
+int Cards::totalAnswers(int i){
+	 return (answers[i][“answers”].size());
+}
