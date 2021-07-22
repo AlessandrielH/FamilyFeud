@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+void menu() 
+{    
+    cout << "****************************************" << endl;    
+    cout << "*           Family Feud Game           *" << endl;
+    cout << "*                  By                  *" << endl; 
+    cout << "*   A. Harper, J. Minor, J. Minor,     *" << endl;
+    cout << "*       P. Ndhlovu, &  K. Brown        *" << endl; 
+    cout << "****************************************" << endl;  
+    cout << "* 1. Play game. Enter teams' names.    *" << endl; 
+    cout << "* 2. Enter new cards.                  *" << endl;
+    cout << "* 3. Exit game.                        *" << endl; 
+    cout << "****************************************" << endl;
+}
+
+int main()
+{    
+    menu(); 
+    // display the menu    
+    //Ask the user to select an option.    
+    int choice;  
+    cout<< "Select an option from the menu above. ";  
+    cin >> choice;    
+    if (choice == 1)    
+    {        
+        string team1, team2;        
+        cout << "Enter team 1's name: ";        
+        cin >> team1; 
+        cout<< "Hello "<<team1<< ". "<<endl;
+        cout << "Enter team 2's name: ";        
+        cin >> team2;  
+        cout<< "Hello "<<team2<< ". "<<endl;     
+
+        }    
+        
+        else if (choice == 2) 
+        {
+            string card; // should this be map?
+            cout << "You may begin inputting card information."<< endl;
+        }
+        
+        else if (choice == 3)    
+        {        
+            cout << "Goodbye for now." << endl;
+        }       
+        return 0;
+
+    }
