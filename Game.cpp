@@ -36,13 +36,36 @@ public:
 			{
 				string answer;
 				//get team names
-				
 				for (int round = 0; round < cards.totalQuestions(); round++)
 				{
-					cout << "There are " << cards.totalAnswers(round) << " possible answers." << endl;
-					cards.getQuestion(round);
-					cin >> answer;
+					cout << "ROUND:" << round + 1 << endl;
+					int wrong = 0;
+					int correct = 0;
+					do{
+						cout << "There are " << cards.totalAnswers(round) << " possible answers." << endl;
+						cards.getQuestion(round);
+						cin >> answer;
 
+						if (cards.isCorrect(round, answer))
+						{
+							cout << "Your answer is correct." << endl;
+							//display answer
+							//add points for answer
+						}
+						else
+						{
+							wrong++;
+							cout << "Your answer is incorrect. " << endl;
+							cout<<"You have been incorrect "<<wrong<<" times."<<endl;
+						}
+						
+						if (wrong==3)
+						{
+							//The other team answers question
+						}
+					} while (wrong < 3 && correct < cards.totalAnswers(round));
+					/*repeats question until team guesses all answers 
+					or answers incorrectly 3 times*/
 				}
 			}
 			else if (menu == 3)//adds Card
