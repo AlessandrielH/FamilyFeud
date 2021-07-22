@@ -34,11 +34,16 @@ public:
 			}
 			else if (menu == 2)//players start game
 			{
-				//get Team names
-				//display number of answers
-				//display question
-				//ask for answer
-				//
+				string answer;
+				//get team names
+				
+				for (int round = 0; round < cards.totalQuestions(); round++)
+				{
+					cout << "There are " << cards.totalAnswers(round) << " possible answers." << endl;
+					cards.getQuestion(round);
+					cin >> answer;
+
+				}
 			}
 			else if (menu == 3)//adds Card
 			{
