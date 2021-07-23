@@ -19,7 +19,7 @@ public:
 	void displayMenu();
 	
 	
-	void Game::startPlaying()
+	void startPlaying()
 	{
 		//initialize Cards Object
 		Cards cards= new Cards;
@@ -35,7 +35,19 @@ public:
 			else if (menu == 2)//players start game
 			{
 				string answer;
-				//get team names
+				string team1, team2;
+				map<string, int> points;
+
+				cout << "Enter team 1's name: ";
+				cin >> team1;
+				cout << "Hello " << team1 << ". " << endl;
+				cout << "Enter team 2's name: ";
+				cin >> team2;
+				cout << "Hello " << team2 << ". " << endl;
+				
+				points[team1] =  0;
+				points[team2] = 0;
+
 				for (int round = 0; round < cards.totalQuestions(); round++)
 				{
 					cout << "ROUND:" << round + 1 << endl;
@@ -123,6 +135,20 @@ public:
 	    	cout<<"2. Add 4-8 possible answers\n";
 	    	cout<<"3. Assign points to each answer\n";
 	    	cout<<"***The total points for each question should be 100\n"<<endl;
+	}
 
+	void DisplayMenu()
+	{
+		cout << "****************************************" << endl;
+		cout << "*           Family Feud Game           *" << endl;
+		cout << "*                  By                  *" << endl;
+		cout << "*   A. Harper, J. Minor, J. Minor,     *" << endl;
+		cout << "*       P. Ndhlovu, &  K. Brown        *" << endl;
+		cout << "****************************************" << endl;
+		cout << "* 1. Instructions                      *" << endl;
+		cout<<"* 2. Play game.                          *" << endl;
+		cout << "* 3. Enter new cards.                  *" << endl;
+		cout << "* 4. Exit game.                        *" << endl;
+		cout << "****************************************" << endl;
 	}
 };
