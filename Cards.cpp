@@ -64,7 +64,7 @@ vector<string> Cards::getAnswers(int num){
 	return answers[num]["answers"];
 }
 
-int getAnswerPoints(int questionNum,int answerNum){
+int Cards::getAnswerPoints(int questionNum,int answerNum){
 
 	return answerPoints[questionNum][answerNum]; 
 }
