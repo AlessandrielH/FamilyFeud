@@ -13,6 +13,7 @@ private:
 	map<int, map<string, string> > question;
     map<int, map<string, vector<string> >> answers;
     map<string, int> points;
+    vector< vector<int> > answerPoints;
 
 public:
 	 
@@ -23,7 +24,8 @@ public:
 	bool isCorrect(int,string);
 	int totalQuestions();
 	int totalAnswers(int);
-	vector< vector<int> > answerPoints; 
+	int getAnswerPoints(int , int ); 
+	bool checkSumPoints(int);
 }; 
 
 Cards::Cards(){
@@ -68,6 +70,19 @@ vector<string> Cards::getAnswers(int num){
 int Cards::getAnswerPoints(int questionNum,int answerNum){
   
 	return answerPoints[questionNum][answerNum]; 
+}
+
+bool Cards::checkSumPoints(int num){
+
+	int total = 0;
+
+	for (int i = 0; i < answerPoints[num].size(); ++i)
+	{
+		total += answerPoints[num][i];
+	}
+
+	return total == 100;
+
 }
 
 bool Cards:: isCorrect(int num,string ans){
