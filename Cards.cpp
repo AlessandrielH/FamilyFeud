@@ -23,6 +23,7 @@ public:
 	bool isCorrect(int,string);
 	int totalQuestions();
 	int totalAnswers(int);
+	vector< vector<int> > answerPoints; 
 }; 
 
 Cards::Cards(){
@@ -50,6 +51,8 @@ Cards::Cards(){
 	question[10] = {{"questions", "Name a Reason People Might Change Their Name"}};
 	answers[10] = {{"answers", {"Got Married", "Their Name is Lame ", "Witness Protection", "Divorce"}}};
 
+	answerPoints = { {60, 16, 13, 6}, {48,14,13,13,6,4}, {}, {}, {}, {}, {}, {},{}, {}, {} };
+
 }
 
 string Cards::getQuestion(int num){
@@ -59,6 +62,11 @@ string Cards::getQuestion(int num){
 vector<string> Cards::getAnswers(int num){
 
 	return answers[num]["answers"];
+}
+
+int getAnswerPoints(int questionNum,int answerNum){
+
+	return answerPoints[questionNum][answerNum]; 
 }
 
 bool Cards:: isCorrect(int num,string ans){
