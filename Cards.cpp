@@ -25,7 +25,7 @@ public:
 	int totalAnswers(int);
 }; 
 
-Card::Cards(){
+Cards::Cards(){
 
 	question[0] = {{"questions", "Name a Reason People Might Change Their Name"}};
 	answers[0] = {{"answers", {"Got Married", "Their Name is Lame ", "Witness Protection", "Divorce"}}};
@@ -61,10 +61,10 @@ vector<string> Cards::getAnswers(int num){
 	return answers[num]["answers"];
 }
 
-bool isCorrect(int num,string ans){
+bool Cards:: isCorrect(int num,string ans){
 	bool correct = false;
 
-	for(int i =0; i < answers[0]["answers"].size(); i++){
+	for(int i =0; i < (answers[0]["answers"].size()); i++){
 		if(ans == answers[0]["answers"][i]){
 			correct = true;
 			break;
@@ -79,5 +79,5 @@ int Cards::totalQuestions(){
 }
 
 int Cards::totalAnswers(int i){
-	 return (answers[i][“answers”].size());
+	 return (answers[i]["answers"].size());
 }
