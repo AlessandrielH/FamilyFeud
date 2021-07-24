@@ -11,18 +11,25 @@ using namespace std;
 
 class Game
 {
+
+private:
+	//initialize Cards Object
+		Cards cards= new Cards;
+
 public:
 	Game();
 	~Game();
 	void startPlaying(); 
 	void displayInstructions();
 	void displayMenu();
+	void createCards();
 	
 	
+
 	void startPlaying()
 	{
 		//initialize Cards Object
-		Cards cards= new Cards;
+		//Cards cards= new Cards;
 		int menu;
 
 		do {
@@ -82,10 +89,11 @@ public:
 			}
 			else if (menu == 3)//adds Card
 			{
-				cards.setQuestion();
-				cards.setAnswers();
-				cards.setPoints();
-				cards.verfiyCard();
+				// cards.setQuestion();
+				// cards.setAnswers();
+				// cards.setPoints();
+				createCards()
+				cards.verifyCard();
 				cards.displayCards();
 			}
 			else if (menu == 4)//quit game
@@ -102,6 +110,46 @@ public:
 			}
 		} while (menu < 4);
 		cout << "Thank you for playing!!" << endl;
+
+	}
+
+	void createCards(){
+		int numCard;
+		int numAns;
+		int numPoint; 
+		string sentence; 
+		string ans; 
+
+		vector<int> inpoints;
+		vector<string> inanswr; 
+		
+		cout << "How many cards do you want to create? " << endl;
+		cin >> numCard; 
+
+
+		for(int i = 0; i < numCard; i++){
+
+			cout << "Enter question number " << i+1 << end; 
+			cin >> sentence; 
+			cards.setQuestion(sentence);
+			
+			cout << "How many possible answers do you want to add for this question " << endl; 
+			cin >> numAns;
+			cout << "Enter " << numAns << " possible answers below" << endl; 
+			for(int i = 0; i < numAns; i++){
+				cin >> ans;
+				inanswr.push_back(ans);
+			}
+			cards.setAnswers(inanswr);
+			
+			cout << "Assign " << numAns << " point for each answers below" << endl;
+			for(int i = 0; i < numAns; i++){
+				cin >> numPoint;
+				inpoints.push_back(numPoint);
+			}
+			cards.setPoints(inpoints);
+
+		}
 
 	}
 	
