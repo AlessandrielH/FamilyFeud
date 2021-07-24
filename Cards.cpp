@@ -2,6 +2,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <set>
 #include <iterator>
 using namespace std; 
 
@@ -18,7 +19,7 @@ private:
 public:
 	 
 	Cards();
-	void setQuestion();
+	void setQuestion(string);
 	string getQuestion(int num);
 	vector<string> getAnswers(int); 
 	bool isCorrect(int,string);
@@ -26,6 +27,11 @@ public:
 	int totalAnswers(int);
 	int getAnswerPoints(int , int ); 
 	bool checkSumPoints(int);
+	bool verifyCard(string);
+	void setAnswers(vector<string>);
+	void setPoints(vector<int>);
+	void displayCards();
+
 }; 
 
 Cards::Cards(){
@@ -85,7 +91,34 @@ bool Cards::checkSumPoints(int num){
 
 }
 
-bool Cards:: isCorrect(int num,string ans){
+void Cards::setQuestion(string sentence){
+
+	question[question.size()]["questions"] = sentence; 
+
+}
+void Cards::setAnswers(vector<string> ans){
+
+	answer[answer.size()]["answers"] = ans;
+
+}
+void Cards::setPoints(vector<int> point){
+
+	answerPoints[answerPoints.size()] = points;
+
+}
+
+bool Cards::verifyCard(string sentence){
+
+	for(int i = 0; i < question.size(); i++){
+		if(sentence == question[i]["questions"]){
+			return true;
+		}
+	}
+	return false; 
+
+}
+
+bool Cards::isCorrect(int num,string ans){
 	bool correct = false;
 
 	for(int i =0; i < (answers[0]["answers"].size()); i++){
