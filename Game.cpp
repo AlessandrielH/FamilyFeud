@@ -14,22 +14,20 @@ class Game
 
 private:
 	//initialize Cards Object
-		Cards cards= new Cards;
+		Cards cards;
 
 public:
-	Game();
-	~Game();
-	void startPlaying(); 
-	void displayInstructions();
-	void displayMenu();
-	void createCards();
+	//Game();
+	//~Game();
+	//void startPlaying(); 
+	//void displayInstructions();
+	//void displayMenu();
+	//void createCards();
 	
 	
 
 	void startPlaying()
 	{
-		//initialize Cards Object
-		//Cards cards= new Cards;
 		int menu;
 
 		do {
@@ -89,12 +87,8 @@ public:
 			}
 			else if (menu == 3)//adds Card
 			{
-				// cards.setQuestion();
-				// cards.setAnswers();
-				// cards.setPoints();
-				createCards()
-				cards.verifyCard();
-				cards.displayCards();
+				createCards();
+				//cards.displayCards();**needs to be defined
 			}
 			else if (menu == 4)//quit game
 			{
@@ -128,9 +122,10 @@ public:
 
 
 		for(int i = 0; i < numCard; i++){
-
-			cout << "Enter question number " << i+1 << end; 
-			cin >> sentence; 
+			do {
+				cout << "Enter question number " << i + 1 << endl;
+				cin >> sentence;
+			} while (cards.verifyCard(sentence)==true);
 			cards.setQuestion(sentence);
 			
 			cout << "How many possible answers do you want to add for this question " << endl; 
@@ -185,7 +180,7 @@ public:
 	    	cout<<"***The total points for each question should be 100\n"<<endl;
 	}
 
-	void DisplayMenu()
+	void displayMenu()
 	{
 		cout << "****************************************" << endl;
 		cout << "*           Family Feud Game           *" << endl;
@@ -194,7 +189,7 @@ public:
 		cout << "*       P. Ndhlovu, &  K. Brown        *" << endl;
 		cout << "****************************************" << endl;
 		cout << "* 1. Instructions                      *" << endl;
-		cout<<"* 2. Play game.                          *" << endl;
+		cout << "* 2. Play game.                        *" << endl;
 		cout << "* 3. Enter new cards.                  *" << endl;
 		cout << "* 4. Exit game.                        *" << endl;
 		cout << "****************************************" << endl;
