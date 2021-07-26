@@ -18,7 +18,7 @@ private:
 
 public:
 	 
-	Cards();
+	/*Cards();
 	void setQuestion(string);
 	string getQuestion(int num);
 	vector<string> getAnswers(int); 
@@ -31,10 +31,10 @@ public:
 	void setAnswers(vector<string>);
 	void setPoints(vector<int>);
 	void displayCards();
+	*/
 
-}; 
 
-Cards::Cards(){
+Cards(){
 
 	question[0] = {{"questions", "Name something you haven't done since high school gym class"}};
 	answers[0] = {{"answers", {"Run a Mile","DodgeBall","Push-Ups","Sit-ups/Crunches","Lift Weights","Swim Laps", "Change in a Locker Room","Tennis","Exercise"}}};
@@ -63,22 +63,22 @@ Cards::Cards(){
 
 }
 
-string Cards::getQuestion(int num){
+string getQuestion(int num){
 	return question[num]["questions"];
 }
 
-vector<string> Cards::getAnswers(int num){
+vector<string> getAnswers(int num){
 
 	return answers[num]["answers"];
 }
 
 
-int Cards::getAnswerPoints(int questionNum,int answerNum){
+int getAnswerPoints(int questionNum,int answerNum){
   
 	return answerPoints[questionNum][answerNum]; 
 }
 
-bool Cards::checkSumPoints(int num){
+bool checkSumPoints(int num){
 
 	int total = 0;
 
@@ -87,27 +87,27 @@ bool Cards::checkSumPoints(int num){
 		total += answerPoints[num][i];
 	}
 
-	return total == 100;
+	return (total == 100);
 
 }
 
-void Cards::setQuestion(string sentence){
+void setQuestion(string sentence){
 
 	question[question.size()]["questions"] = sentence; 
 
 }
-void Cards::setAnswers(vector<string> ans){
+void setAnswers(vector<string> ans){
 
-	answer[answer.size()]["answers"] = ans;
-
-}
-void Cards::setPoints(vector<int> point){
-
-	answerPoints[answerPoints.size()] = points;
+	answers[answers.size()]["answers"] = ans;
 
 }
+void setPoints(vector<int> point){
 
-bool Cards::verifyCard(string sentence){
+	answerPoints[answerPoints.size()] = point;
+
+}
+
+bool verifyCard(string sentence){
 
 	for(int i = 0; i < question.size(); i++){
 		if(sentence == question[i]["questions"]){
@@ -118,7 +118,7 @@ bool Cards::verifyCard(string sentence){
 
 }
 
-bool Cards::isCorrect(int num,string ans){
+bool isCorrect(int num,string ans){
 	bool correct = false;
 
 	for(int i =0; i < (answers[0]["answers"].size()); i++){
@@ -131,10 +131,11 @@ bool Cards::isCorrect(int num,string ans){
 	return correct; 
 }
 
-int Cards::totalQuestions(){
+int totalQuestions(){
 	return question.size();
 }
 
-int Cards::totalAnswers(int i){
+int totalAnswers(int i){
 	 return (answers[i]["answers"].size());
 }
+};
