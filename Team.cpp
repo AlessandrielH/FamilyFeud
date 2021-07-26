@@ -1,43 +1,24 @@
-#include <map>
+#include "Team.h"
 #include <string>
-#include <iostream>
-#include <vector>
-#include <iterator>
-using namespace std; 
+using namespace std;
 
-class Team
+string Team::getName()
 {
+	return name;
+}
 
-private:
-	string name;
-	map<string, int> points;//why is this a map and not an integer
+void Team::setName(string n)
+{
+	name = n;
+}
 
+void Team::addPoints(int p)
+{
+	points[name] += p;
+}
 
-public:
-	Team();
-	~Team();
-	string getName();
-	void setName(string);
-	void addPoints(int);
-
-	string getName()
-	{
-		return name;
-	}
-	
-	void setName(string n)
-	{
-		name=n;
-	}
-	
-	void addPoints(int p)
-	{
-		points[name]+=p;
-	}
-	
-	Team()
-	{
-		name="Please enter a name";
-		points[name]=0;
-	}
-};
+Team::Team()
+{
+	name = "Please enter a name";
+	points[name] = 0;
+}
