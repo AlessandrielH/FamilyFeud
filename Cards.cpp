@@ -10,6 +10,7 @@ using namespace std;
 
 Cards::Cards() {
 
+	question[0] = { {"questions","Name something you haven't done since high school gym class."} };
 	answers[0] = { {"answers", {"Run a Mile","DodgeBall","Push-Ups","Sit-ups/Crunches","Lift Weights","Swim Laps", "Change in a Locker Room","Tennis","Exercise"}} };
 	question[1] = { {"questions", "If your dog ran away, name something you’d be surprised he took with him. "} };
 	answers[1] = { {"answers", {"The Cat","Leash/Collar","Food/Bowl","His Bone","Clothes/Shoe","Bed/Pillow","Favorite Toy","Wallet/Money"}} };
