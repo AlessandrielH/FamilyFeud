@@ -28,15 +28,16 @@ using namespace std;
 				map<string, int> points;
 
 				cout << "Enter team 1's name: ";
-				cin >> team1;
+				cin >>team1;
 				cout << "Hello " << team1 << ". " << endl;
 				cout << "Enter team 2's name: ";
-				cin >> team2;
+				cin>>team2;
 				cout << "Hello " << team2 << ". " << endl;
+				cout << "*****************************************" << endl;
 
 				points[team1] = 0;
 				points[team2] = 0;
-				string turn=team1;
+				string turn = team1;
 
 				for (int round = 0; round < cards.totalQuestions(); round++)
 				{
@@ -45,12 +46,13 @@ using namespace std;
 					int correct = 0;
 					vector <string> foundAnswers;
 					do {
-						cout << "Team " << turn << " it is your turn\n";
-                        			cout << cards.getQuestion(round) << endl;
+						cout << "Team " << turn << " it is your turn"<<endl;
+						cout << "Question " << round+1 << ": "<<cards.getQuestion(round) << endl;
 						cout << "There are " << cards.totalAnswers(round) << " possible answers." << endl;
 						cout << "Enter your answers below " << endl;
-						cin >> answer;
-
+						getline(cin, answer);
+							//cin.clear();
+							//cin.ignore(10000, '\n');
 						if (cards.isCorrect(round, answer))
 						{
 							cout << "Your answer is correct." << endl;
@@ -79,8 +81,8 @@ using namespace std;
 							cout << "Team " << turn << " can now steal!!" << endl;
 							//steal process
 							//change turn
-							turn = changeTeam(turn, team1, team2);
 						}
+						cout << "*****************************************" << endl;
 					} while (wrong < 3 && correct < cards.totalAnswers(round));
 					/*repeats question until team guesses all answers
 					or answers incorrectly 3 times*/
@@ -129,9 +131,9 @@ using namespace std;
 		for (int i = 0; i < numCard; i++) {
 			do {
 				cout << "Enter question number " << i + 1 << endl;
-				cin >> sentence;
-                		cin.clear();
-                		cin.ignore(10000, '\n');
+				getline(cin, sentence);
+                	//cin.clear();
+                	//cin.ignore(10000, '\n');
 			} while (cards.verifyCard(sentence) == true);
 			cards.setQuestion(sentence);
 
@@ -142,9 +144,10 @@ using namespace std;
 
 			cout << "Enter " << numAns << " possible answers below" << endl;
 			for (int i = 0; i < numAns; i++) {
-				cin >> ans;
-                		cin.clear();
-                		cin.ignore(10000, '\n');
+				cout << "Answer " << i + 1<<":";
+				getline(cin, ans);
+                		//cin.clear();
+                		//cin.ignore(10000, '\n');
 				inanswr.push_back(ans);
 			}
 			cards.setAnswers(inanswr);
