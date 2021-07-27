@@ -13,7 +13,7 @@ private:
 	//map<int, map<string, vector<string> >  > quiz;
 	//map<int, map< map<string, string>, map<string, vector<string> > > > quizy;
 	map<int, map<string, string> > question;
-	map<int, map<string, vector<string> >> answers;
+	map<int, map<string, vector<string> > > answers;
 	map<string, int> points;
 	vector< vector<int> > answerPoints;
 

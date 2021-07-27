@@ -43,8 +43,9 @@ using namespace std;
 					int wrong = 0;
 					int correct = 0;
 					do {
+                        cout << cards.getQuestion(round) << endl;
 						cout << "There are " << cards.totalAnswers(round) << " possible answers." << endl;
-						cards.getQuestion(round);
+						cout << "Enter your answers below " << endl;
 						cin >> answer;
 
 						if (cards.isCorrect(round, answer))
@@ -103,30 +104,43 @@ using namespace std;
 
 		cout << "How many cards do you want to create? " << endl;
 		cin >> numCard;
+        cin.clear();
+        cin.ignore(10000, '\n');
 
 
 		for (int i = 0; i < numCard; i++) {
 			do {
 				cout << "Enter question number " << i + 1 << endl;
 				cin >> sentence;
+                cin.clear();
+                cin.ignore(10000, '\n');
 			} while (cards.verifyCard(sentence) == true);
 			cards.setQuestion(sentence);
 
-			cout << "How many possible answers do you want to add for this question " << endl;
+			cout << "How many possible answers do you want to add for this question ?" << endl;
 			cin >> numAns;
+            cin.clear();
+            cin.ignore(10000, '\n');
+
 			cout << "Enter " << numAns << " possible answers below" << endl;
 			for (int i = 0; i < numAns; i++) {
 				cin >> ans;
+                cin.clear();
+                cin.ignore(10000, '\n');
 				inanswr.push_back(ans);
 			}
 			cards.setAnswers(inanswr);
+			inanswr.clear();
 
 			cout << "Assign " << numAns << " point for each answers below" << endl;
 			for (int i = 0; i < numAns; i++) {
 				cin >> numPoint;
+                cin.clear();
+                cin.ignore(10000, '\n');
 				inpoints.push_back(numPoint);
 			}
 			cards.setPoints(inpoints);
+			inpoints.clear();
 
 		}
 

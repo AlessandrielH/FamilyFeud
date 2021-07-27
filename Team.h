@@ -1,3 +1,4 @@
+#ifndef TEAM
 #define TEAM
 #include <string>
 #include <map>
