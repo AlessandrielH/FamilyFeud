@@ -113,3 +113,15 @@ int Cards::totalQuestions() {
 int Cards::totalAnswers(int i) {
 	return (answers[i]["answers"].size());
 }
+
+int Cards::getAnswerKey(int num, string ans) {
+	bool correct = false;
+	int i;
+	for (i = 0; i < (answers[0]["answers"].size()); i++) {
+		if (ans == answers[0]["answers"][i]) {
+			correct = true;
+			break;
+		}
+	}
+	return i;
+}
