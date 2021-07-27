@@ -51,8 +51,9 @@ using namespace std;
 						cout << "There are " << cards.totalAnswers(round) << " possible answers." << endl;
 						cout << "Enter your answers below " << endl;
 						getline(cin, answer);
-							//cin.clear();
-							//cin.ignore(10000, '\n');
+						cout << endl;
+							cin.clear();
+							cin.ignore(10000, '\n');
 						if (cards.isCorrect(round, answer))
 						{
 							cout << "Your answer is correct." << endl;
@@ -80,7 +81,33 @@ using namespace std;
 							turn = changeTeam(turn, team1, team2);
 							cout << "Team " << turn << " can now steal!!" << endl;
 							//steal process
-							//change turn
+								// ask question
+							cout << "Question " << round + 1 << ": " << cards.getQuestion(round) << endl;
+							cout << "There are " << cards.totalAnswers(round) << " possible answers." << endl;
+							cout << "Enter your answers below " << endl;
+								// guess 
+							getline(cin, answer);
+									//incorrect lose
+									// correct win 
+							if (cards.isCorrect(round, answer))
+							{
+								foundAnswers.push_back(answer);
+								cout << "*****************************************" << endl;
+								cout << "FOUND ANSWERS" << endl;
+								for (int i = 0; i < foundAnswers.size(); i++)
+								{
+									cout << foundAnswers[i] << endl;//display  found answers
+								}
+								cout << "*****************************************" << endl;
+								//allocate points
+								points[turn] += cards.getAnswerPoints(round, cards.getAnswerKey(round, answer));
+							}
+							else
+							{
+								cout << changeTeam(turn, team1, team2) << " wins the round!!" << endl;
+								cout << changeTeam(turn, team1, team2) << " has " << points[changeTeam(turn, team1, team2)] << "points" << endl;;
+							}
+							cout << turn << " has " << points[turn] << " points" << endl;;
 						}
 						cout << "*****************************************" << endl;
 					} while (wrong < 3 && correct < cards.totalAnswers(round));
@@ -88,7 +115,19 @@ using namespace std;
 					or answers incorrectly 3 times*/
 					
 					turn = changeTeam(turn, team1, team2);
+					cout << "Do you want to play another round? (Yes/No)" << endl;
+					cin >> answer;
+					if(answer=="yes")
+					{
+						cout << "*****continue to next round*****" << endl;
+					}
+					else if (answer == "no")
+					{
+						break;
+					}
 				}
+				cout << team1 << " has " << points[team1] << " total points" << endl;
+				cout << team2 << " has " << points[team2] << " total points " << endl;
 			}
 			else if (menu == 3)//adds Card
 			{
