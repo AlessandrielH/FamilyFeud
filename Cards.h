@@ -32,5 +32,6 @@ public:
 	void setAnswers(vector<string>);
 	void setPoints(vector<int>);
 	void displayCards();
+	int getAnswerKey(int, string);
 };
 #endif 
