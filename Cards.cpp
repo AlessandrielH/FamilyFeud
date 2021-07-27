@@ -10,7 +10,7 @@ using namespace std;
 
 Cards::Cards() {
 
-	question[0] = { {"questions", "Name something you haven't done since high school gym class"} };
+	question[0] = {{"questions", "Name something you haven't done since high school gym class"}};
 	answers[0] = { {"answers", {"Run a Mile","DodgeBall","Push-Ups","Sit-ups/Crunches","Lift Weights","Swim Laps", "Change in a Locker Room","Tennis","Exercise"}} };
 	question[1] = { {"questions", "If Your Dog Ran Away, Name Something You’d Be Surprised He Took With Him"} };
 	answers[1] = { {"answers", {"The Cat","Leash/Collar","Food/Bowl","His Bone","Clothes/Shoe","Bed/Pillow","Favorite Toy","Wallet/Money"}} };
@@ -77,7 +77,9 @@ void Cards::setAnswers(vector<string> ans) {
 }
 void Cards::setPoints(vector<int> point) {
 
-	answerPoints[answerPoints.size()] = point;
+    answerPoints.push_back(point);
+
+	//answerPoints[answerPoints.size()] = point;
 
 }
 
