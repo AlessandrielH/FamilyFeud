@@ -42,19 +42,27 @@ using namespace std;
 					cout << "ROUND:" << round + 1 << endl;
 					int wrong = 0;
 					int correct = 0;
+					vector <string> foundAnswers;
 					do {
-
-                        cout << cards.getQuestion(round) << endl;
+						cout << "Team " << turn << " it is your turn\n";
+                        			cout << cards.getQuestion(round) << endl;
 						cout << "There are " << cards.totalAnswers(round) << " possible answers." << endl;
 						cout << "Enter your answers below " << endl;
-
 						cin >> answer;
 
 						if (cards.isCorrect(round, answer))
 						{
 							cout << "Your answer is correct." << endl;
 							//display answer
-							//add points for answer
+							foundAnswers.push_back ( answer);
+							cout << "*****************************************"<< endl;
+							cout << "FOUND ANSWERS" << endl;
+							for (int i = 0; i < foundAnswers.size(); i++)
+							{
+								cout << foundAnswers[i] << endl;//display  found answers
+							}
+							cout << "*****************************************" << endl;
+							points[turn] += cards.getAnswerPoints(round, cards.getAnswerKey(round, answer));//adds points
 						}
 						else
 						{
@@ -66,10 +74,17 @@ using namespace std;
 						if (wrong == 3)
 						{
 							//The other team answers question
+							turn = changeTeam(turn, team1, team2);
+							cout << "Team " << turn << " can now steal!!" << endl;
+							//steal process
+							//change turn
+							turn = changeTeam(turn, team1, team2);
 						}
 					} while (wrong < 3 && correct < cards.totalAnswers(round));
 					/*repeats question until team guesses all answers
 					or answers incorrectly 3 times*/
+					
+					turn = changeTeam(turn, team1, team2);
 				}
 			}
 			else if (menu == 3)//adds Card
@@ -106,29 +121,29 @@ using namespace std;
 
 		cout << "How many cards do you want to create? " << endl;
 		cin >> numCard;
-        cin.clear();
-        cin.ignore(10000, '\n');
+        	cin.clear();
+        	cin.ignore(10000, '\n');
 
 
 		for (int i = 0; i < numCard; i++) {
 			do {
 				cout << "Enter question number " << i + 1 << endl;
 				cin >> sentence;
-                cin.clear();
-                cin.ignore(10000, '\n');
+                		cin.clear();
+                		cin.ignore(10000, '\n');
 			} while (cards.verifyCard(sentence) == true);
 			cards.setQuestion(sentence);
 
 			cout << "How many possible answers do you want to add for this question ?" << endl;
 			cin >> numAns;
-            cin.clear();
-            cin.ignore(10000, '\n');
+            		cin.clear();
+            		cin.ignore(10000, '\n');
 
 			cout << "Enter " << numAns << " possible answers below" << endl;
 			for (int i = 0; i < numAns; i++) {
 				cin >> ans;
-                cin.clear();
-                cin.ignore(10000, '\n');
+                		cin.clear();
+                		cin.ignore(10000, '\n');
 				inanswr.push_back(ans);
 			}
 			cards.setAnswers(inanswr);
@@ -137,8 +152,8 @@ using namespace std;
 			cout << "Assign " << numAns << " point for each answers below" << endl;
 			for (int i = 0; i < numAns; i++) {
 				cin >> numPoint;
-                cin.clear();
-                cin.ignore(10000, '\n');
+                		cin.clear();
+                		cin.ignore(10000, '\n');
 				inpoints.push_back(numPoint);
 			}
 			cards.setPoints(inpoints);
@@ -193,4 +208,17 @@ using namespace std;
 		cout << "* 3. Enter new cards.                  *" << endl;
 		cout << "* 4. Exit game.                        *" << endl;
 		cout << "****************************************" << endl;
+	}
+
+string Game::changeTeam(string turn; string t1, string t2)
+	{
+		if (turn == t1)
+		{
+			turn = t2;
+		}
+		else if (turn == t2)
+		{
+			turn == t1;
+		}
+		return turn;
 	}
