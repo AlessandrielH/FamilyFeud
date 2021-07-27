@@ -43,9 +43,11 @@ using namespace std;
 					int wrong = 0;
 					int correct = 0;
 					do {
-                        cout << cards.getQuestion(round) << endl; //shows the question to the players
+
+                        cout << cards.getQuestion(round) << endl;
 						cout << "There are " << cards.totalAnswers(round) << " possible answers." << endl;
-						cout << "Enter your answers below: " << endl;
+						cout << "Enter your answers below " << endl;
+
 						cin >> answer;
 
 						if (cards.isCorrect(round, answer))
