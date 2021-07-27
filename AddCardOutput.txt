@@ -1,0 +1,33 @@
+****************************************
+*           Family Feud Game           *
+*                  By                  *
+*   A. Harper, J. Minor, J. Minor,     *
+*       P. Ndhlovu, &  K. Brown        *
+****************************************
+* 1. Instructions                      *
+* 2. Play game.                        *
+* 3. Enter new cards.                  *
+* 4. Exit game.                        *
+****************************************
+3
+How many cards do you want to create?
+2
+Enter question number 1
+Name the starter Pokemon
+How many possible answers do you want to add for this question ?
+3
+Enter 3 possible answers below
+bulbasaur
+charmander
+squirtle
+Assign 3 point for each answers below
+30
+50
+20
+Enter question number 2
+Name something found inside a woman's purse
+Enter question number 2
+Name something found on a desk
+Enter question number 2
+Name something in your kitchen
+Enter question number 2
