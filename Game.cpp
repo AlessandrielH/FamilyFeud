@@ -36,6 +36,7 @@ using namespace std;
 
 				points[team1] = 0;
 				points[team2] = 0;
+				string turn=team1;
 
 				for (int round = 0; round < cards.totalQuestions(); round++)
 				{
@@ -210,7 +211,7 @@ using namespace std;
 		cout << "****************************************" << endl;
 	}
 
-string Game::changeTeam(string turn; string t1, string t2)
+string Game::changeTeam(string turn, string t1, string t2)
 	{
 		if (turn == t1)
 		{
