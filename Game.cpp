@@ -17,7 +17,7 @@ using namespace std;
 		do {
 			displayMenu();
 			cin >> menu;
-			if (menu == 1)
+			if (menu == 1) //shows players game instructions
 			{
 				displayInstructions();
 			}
@@ -43,9 +43,11 @@ using namespace std;
 					int wrong = 0;
 					int correct = 0;
 					do {
+
                         cout << cards.getQuestion(round) << endl;
 						cout << "There are " << cards.totalAnswers(round) << " possible answers." << endl;
 						cout << "Enter your answers below " << endl;
+
 						cin >> answer;
 
 						if (cards.isCorrect(round, answer))
@@ -58,7 +60,7 @@ using namespace std;
 						{
 							wrong++;
 							cout << "Your answer is incorrect. " << endl;
-							cout << "You have been incorrect " << wrong << " times." << endl;
+							cout << "This is strike " << wrong << "! " << endl; //shows user how many wrong answers (or strikes) they have
 						}
 
 						if (wrong == 3)

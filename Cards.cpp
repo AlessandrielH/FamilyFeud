@@ -10,27 +10,26 @@ using namespace std;
 
 Cards::Cards() {
 
-	question[0] = {{"questions", "Name something you haven't done since high school gym class"}};
 	answers[0] = { {"answers", {"Run a Mile","DodgeBall","Push-Ups","Sit-ups/Crunches","Lift Weights","Swim Laps", "Change in a Locker Room","Tennis","Exercise"}} };
-	question[1] = { {"questions", "If Your Dog Ran Away, Name Something You’d Be Surprised He Took With Him"} };
+	question[1] = { {"questions", "If your dog ran away, name something you’d be surprised he took with him. "} };
 	answers[1] = { {"answers", {"The Cat","Leash/Collar","Food/Bowl","His Bone","Clothes/Shoe","Bed/Pillow","Favorite Toy","Wallet/Money"}} };
-	question[2] = { {"questions", "Name Something You Find in a Breakfast Buffet"} };
+	question[2] = { {"questions", "Name something you find in a breakfast buffet. "} };
 	answers[2] = { {"answers", {"Eggs","Bacon","Sausage","Potatoes/Hashbrowns","Juice", "Coffee", "Melon", "Cereal"}} };
-	question[3] = { {"questions", "Name Marvel’s Avengers"} };
+	question[3] = { {"questions", "Name Marvel’s Avengers. "} };
 	answers[3] = { {"answers", {"Captain America","Iron Man","Black Panther","The Hulk","Thor","Black Widow","Spiderman","Hawkeye"}} };
-	question[4] = { {"questions", "In Horror Movies, Name a Place Teenagers Go Where There’s Always a Killer On the Loose"} };
-	answers[4] = { {"answers", {"Cabin/Camp/Woods","Graveyard","Movie Theater", "Basement/Cellar","Closet","Closet","Bathroom/Shower", "Bedroom/Bed", "A Party"}} };
-	question[5] = { {"questions", "Name a Common Candy Bar Component"} };
+	question[4] = { {"questions", "In horror movies, name a place teenagers go where there’s always a killer on the loose. "} };
+	answers[4] = { {"answers", {"Cabin/Camp/Woods","Graveyard","Movie Theater", "Basement/Cellar", "Closet","Bathroom/Shower", "Bedroom/Bed", "A Party"}} };
+	question[5] = { {"questions", "Name a common candy bar component. "} };
 	answers[5] = { {"answers", {"Chocolate", "Peanuts", "Caramel", "Almonds", "Nougat", "Coconut"}} };
-	question[6] = { {"questions", "Name a Place Where if Her Husband Took Her There For Her Anniversary, a Wife Would Be Mad"} };
+	question[6] = { {"questions", "Name a place where if her husband took her there for their anniversary, a wife would be mad. "} };
 	answers[6] = { {"answers", {"Tacky Restaurant", "Strip Joint", "Sporting Event","Bar/Club", "Bowling Alley","His Parent's House", "The Movies","Car Show"}} };
-	question[7] = { {"questions", "Other Than Letters, Name Something People Get in the Mail"} };
+	question[7] = { {"questions", "Other than letters, name something people get in the mail. "} };
 	answers[7] = { {"answers", {"Junk Mail","Magazines","Bills","Packages", "Postcards", "Checks"}} };
-	question[8] = { {"questions", "Name Something That Grows Faster Than You Want it To"} };
+	question[8] = { {"questions", "Name something that grows faster than you want it to. "} };
 	answers[8] = { {"answers", {"Hair/Unibrow", "Lawn/Weeds", "Kids/Babies", "Belly/Weight", "Nails", "Debt/Expenses"}} };
-	question[9] = { {"questions", "When You Call in Sick to Work or School, Name Something You Do to Make it Believable"} };
+	question[9] = { {"questions", "When you call in sick to work or school, name something you do to make it believable. "} };
 	answers[9] = { {"answers", {"Cough", "Hoarse", "Fake Puke", "Moan","Fake Doctor's Note", "Sneeze"}} };
-	question[10] = { {"questions", "Name a Reason People Might Change Their Name"} };
+	question[10] = { {"questions", "Name a reason people might change their name. "} };
 	answers[10] = { {"answers", {"Got Married", "Their Name is Lame ", "Witness Protection", "Divorce"}} };
 
 	answerPoints = { {25,23,21,9,8,5,3,2,2}, {23,17,16,9,6,6,4,4}, {25,24,19,12,7,6,2,2}, {22,22,20,15,15,9,3,3}, {49,12,6,5,5,4,4,4}, {36,22,15,12,10,6}, {43,19,12,6,4,4,2,2}, {24,22,17,14,5,4},{48,14,13,13,6,4}, {68,18,3,3,2,2}, {60,16,13,6} };
