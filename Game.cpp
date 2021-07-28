@@ -29,10 +29,10 @@ using namespace std;
 
 				cout << "Enter team 1's name: ";
 				cin >>team1;
-				cout << "Hello " << team1 << ". " << endl;
+				cout << "Hello, " << team1 << ". " << endl;
 				cout << "Enter team 2's name: ";
 				cin>>team2;
-				cout << "Hello " << team2 << ". " << endl;
+				cout << "Hello, " << team2 << ". " << endl;
 				cout << "*****************************************" << endl;
 
 				points[team1] = 0;
@@ -46,10 +46,10 @@ using namespace std;
 					int correct = 0;
 					vector <string> foundAnswers;
 					do {
-						cout << "Team " << turn << " it is your turn"<<endl;
+						cout << "Team " << turn << ", it is your turn."<<endl;
 						cout << "Question " << round+1 << ": "<<cards.getQuestion(round) << endl;
 						cout << "There are " << cards.totalAnswers(round) << " possible answers." << endl;
-						cout << "Enter your answers below " << endl;
+						cout << "Enter your answers below: " << endl;
 						getline(cin, answer);
 						cout << endl;
 							cin.clear();
