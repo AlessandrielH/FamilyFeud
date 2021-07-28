@@ -38,13 +38,14 @@ using namespace std;
 				points[team1] = 0;
 				points[team2] = 0;
 				string turn = team1;
-
+				vector <string> foundAnswers;
+				
 				for (int round = 0; round < cards.totalQuestions(); round++)
 				{
 					cout << "ROUND:" << round + 1 << endl;
 					int wrong = 0;
 					int correct = 0;
-					vector <string> foundAnswers;
+					foundAnswers.clear();
 					do {
 						cout << "Team " << turn << ", it is your turn."<<endl;
 						cout << "Question " << round+1 << ": "<<cards.getQuestion(round) << endl;
