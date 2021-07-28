@@ -9,8 +9,101 @@
 * 3. Enter new cards.                  *
 * 4. Exit game.                        *
 ****************************************
-6
-Your choice was invalid. You must enter a value 1-4.
+2
+Enter team 1's name: Red
+Hello Red.
+Enter team 2's name: Blue
+Hello Blue.
+*****************************************
+ROUND:1
+Team Red it is your turn
+Question 1: Name something you haven't done since high school gym class.
+There are 9 possible answers.
+Enter your answers below
+
+Run a Mile
+Your answer is incorrect.
+This is strike 1!
+*****************************************
+Team Red it is your turn
+Question 1: Name something you haven't done since high school gym class.
+There are 9 possible answers.
+Enter your answers below
+Run a Mile
+
+
+Your answer is correct.
+*****************************************
+FOUND ANSWERS
+Run a Mile
+*****************************************
+*****************************************
+Team Red it is your turn
+Question 1: Name something you haven't done since high school gym class.
+There are 9 possible answers.
+Enter your answers below
+Tennis
+
+
+Your answer is correct.
+*****************************************
+FOUND ANSWERS
+Run a Mile
+Tennis
+*****************************************
+*****************************************
+Team Red it is your turn
+Question 1: Name something you haven't done since high school gym class.
+There are 9 possible answers.
+Enter your answers below
+Exercise
+
+
+Your answer is correct.
+*****************************************
+FOUND ANSWERS
+Run a Mile
+Tennis
+Exercise
+*****************************************
+*****************************************
+Team Red it is your turn
+Question 1: Name something you haven't done since high school gym class.
+There are 9 possible answers.
+Enter your answers below
+Rugby
+
+
+Your answer is incorrect.
+This is strike 2!
+*****************************************
+Team Red it is your turn
+Question 1: Name something you haven't done since high school gym class.
+There are 9 possible answers.
+Enter your answers below
+FoodFight
+
+
+Your answer is incorrect.
+This is strike 3!
+Team Blue can now steal!!
+Question 1: Name something you haven't done since high school gym class.
+There are 9 possible answers.
+Enter your answers below
+DodgeBall
+*****************************************
+FOUND ANSWERS
+Run a Mile
+Tennis
+Exercise
+DodgeBall
+*****************************************
+Blue has 23 points
+*****************************************
+Do you want to play another round? (Yes/No)
+no
+Red has 29 total points
+Blue has 23 total points
 ****************************************
 *           Family Feud Game           *
 *                  By                  *
@@ -22,65 +115,3 @@ Your choice was invalid. You must enter a value 1-4.
 * 3. Enter new cards.                  *
 * 4. Exit game.                        *
 ****************************************
-0
-Your choice was invalid. You must enter a value 1-4.
-****************************************
-*           Family Feud Game           *
-*                  By                  *
-*   A. Harper, J. Minor, J. Minor,     *
-*       P. Ndhlovu, &  K. Brown        *
-****************************************
-* 1. Instructions                      *
-* 2. Play game.                        *
-* 3. Enter new cards.                  *
-* 4. Exit game.                        *
-****************************************
-1
-INSTRUCTIONS
-
-Play Game Instructions:
-1. You will be presented with the number of possible answers.
-2. The question will be displayed.
-3. The team called will enter an answer to the question.
-4. Possible Responses:
-         ~  If the team answers correctly, that team will receive the points
-         for that answer and enter in a new guess.
-         ~  If the answer is wrong, that team will get 2 more chances to
-         correctly answer the question.
-         ~  If the answer, is still wrong after 2 chances, the other team
-         gets 1 chance to guess the answer.
-         ~  If the other team guesses correctly, they receive all of the points
-         from that round.
-         ~  If the other team guesses incorrectly, the original team keeps all
-         of their points.
-5. The players will be asked if they want to play another round.
-         ~  If they answer yes, the points will be carried over to the next
-         round.
-         ~  If they answer no, the game will return to the Menu.
-
-Add Card Instructions:
-In this section, You will add questions to the game.
-1. Create a question.
-2. Add 4-8 possible answers
-3. Assign points to each answer
-***The total points for each question should be 100
-
-****************************************
-*           Family Feud Game           *
-*                  By                  *
-*   A. Harper, J. Minor, J. Minor,     *
-*       P. Ndhlovu, &  K. Brown        *
-****************************************
-* 1. Instructions                      *
-* 2. Play game.                        *
-* 3. Enter new cards.                  *
-* 4. Exit game.                        *
-****************************************
-3
-How many cards do you want to create?
-1
-Enter question number 1
-How many lick does it take to get to the center of a tootsie pop?
-How many possible answers do you want to add for this question
-Enter 0 possible answers below
-Assign 0 point for each answers below
