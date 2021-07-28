@@ -5,9 +5,9 @@
 *       P. Ndhlovu, &  K. Brown        *
 ****************************************
 * 1. Instructions                      *
-* 2. Play game.                        *
-* 3. Enter new cards.                  *
-* 4. Exit game.                        *
+* 2. Play game                        *
+* 3. Enter new cards                  *
+* 4. Exit game                        *
 ****************************************
 2
 Enter team 1's name: Red
