@@ -32,6 +32,8 @@ using namespace std;
 				cout << "Hello, " << team1 << ". " << endl;
 				cout << "Enter team 2's name: ";
 				cin>>team2;
+					cin.clear();
+					cin.ignore(10000, '\n');
 				cout << "Hello, " << team2 << ". " << endl;
 				cout << "*****************************************" << endl;
 
