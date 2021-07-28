@@ -90,8 +90,8 @@ using namespace std;
 							cout << "Enter your answers below " << endl;
 								// guess 
 							getline(cin, answer);
-									//incorrect lose
-									// correct win 
+									cin.clear();
+									cin.ignore(10000, '\n');
 							if (cards.isCorrect(round, answer))
 							{
 								foundAnswers.push_back(answer);
@@ -104,6 +104,7 @@ using namespace std;
 								cout << "*****************************************" << endl;
 								//allocate points
 								points[turn] += cards.getAnswerPoints(round, cards.getAnswerKey(round, answer));
+								cout << turn << " wins the round!!" << endl;
 							}
 							else
 							{
@@ -120,11 +121,11 @@ using namespace std;
 					turn = changeTeam(turn, team1, team2);
 					cout << "Do you want to play another round? (Yes/No)" << endl;
 					cin >> answer;
-					if(answer=="yes")
+					if(answer=="yes"||answer=="Yes"||answer=="YES")
 					{
 						cout << "*****continue to next round*****" << endl;
 					}
-					else if (answer == "no")
+					else if (answer == "no"||answer=="No"||answer=="NO")
 					{
 						break;
 					}
@@ -250,9 +251,9 @@ using namespace std;
 		cout << "*       P. Ndhlovu, &  K. Brown        *" << endl;
 		cout << "****************************************" << endl;
 		cout << "* 1. Instructions                      *" << endl;
-		cout << "* 2. Play game.                        *" << endl;
-		cout << "* 3. Enter new cards.                  *" << endl;
-		cout << "* 4. Exit game.                        *" << endl;
+		cout << "* 2. Play game                         *" << endl;
+		cout << "* 3. Enter new cards                   *" << endl;
+		cout << "* 4. Exit game                         *" << endl;
 		cout << "****************************************" << endl;
 	}
 
