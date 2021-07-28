@@ -97,8 +97,8 @@ bool Cards::verifyCard(string sentence) {
 bool Cards::isCorrect(int num, string ans) {
 	bool correct = false;
 
-	for (int i = 0; i < (answers[0]["answers"].size()); i++) {
-		if (ans == answers[0]["answers"][i]) {
+	for (int i = 0; i < (answers[num]["answers"].size()); i++) {
+		if (ans == answers[num]["answers"][i]) {
 			correct = true;
 			break;
 		}
@@ -118,8 +118,8 @@ int Cards::totalAnswers(int i) {
 int Cards::getAnswerKey(int num, string ans) {
 	bool correct = false;
 	int i;
-	for (i = 0; i < (answers[0]["answers"].size()); i++) {
-		if (ans == answers[0]["answers"][i]) {
+	for (i = 0; i < (answers[num]["answers"].size()); i++) {
+		if (ans == answers[num]["answers"][i]) {
 			correct = true;
 			break;
 		}
