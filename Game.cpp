@@ -107,10 +107,10 @@ using namespace std;
 								cout << changeTeam(turn, team1, team2) << " wins the round!!" << endl;
 								cout << changeTeam(turn, team1, team2) << " has " << points[changeTeam(turn, team1, team2)] << "points" << endl;;
 							}
-							cout << turn << " has " << points[turn] << " points" << endl;;
+							cout << turn << " has " << points[turn] << " points!" << endl;;
 						}
 						cout << "*****************************************" << endl;
-					} while (wrong < 3 && correct < cards.totalAnswers(round));
+					} while ((wrong < 3) && (correct < cards.totalAnswers(round)));
 					/*repeats question until team guesses all answers
 					or answers incorrectly 3 times*/
 					
@@ -126,8 +126,8 @@ using namespace std;
 						break;
 					}
 				}
-				cout << team1 << " has " << points[team1] << " total points" << endl;
-				cout << team2 << " has " << points[team2] << " total points " << endl;
+				cout << team1 << " has " << points[team1] << " total points." << endl;
+				cout << team2 << " has " << points[team2] << " total points. " << endl;
 			}
 			else if (menu == 3)//adds Card
 			{
@@ -136,7 +136,7 @@ using namespace std;
 			}
 			else if (menu == 4)//quit game
 			{
-				cout << "You have QUIT the game\n" << endl;
+				cout << "You have QUIT the game.\n" << endl;
 				break;
 			}
 			else
@@ -169,19 +169,19 @@ using namespace std;
 
 		for (int i = 0; i < numCard; i++) {
 			do {
-				cout << "Enter question number " << i + 1 << endl;
+				cout << "Enter question number " << i + 1 << "." << endl;
 				getline(cin, sentence);
                 	//cin.clear();
                 	//cin.ignore(10000, '\n');
 			} while (cards.verifyCard(sentence) == true);
 			cards.setQuestion(sentence);
 
-			cout << "How many possible answers do you want to add for this question ?" << endl;
+			cout << "How many possible answers do you want to add for this question? " << endl;
 			cin >> numAns;
             		cin.clear();
             		cin.ignore(10000, '\n');
 
-			cout << "Enter " << numAns << " possible answers below" << endl;
+			cout << "Enter " << numAns << " possible answers below: " << endl;
 			for (int i = 0; i < numAns; i++) {
 				cout << "Answer " << i + 1<<":";
 				getline(cin, ans);
@@ -192,7 +192,7 @@ using namespace std;
 			cards.setAnswers(inanswr);
 			inanswr.clear();
 
-			cout << "Assign " << numAns << " point for each answers below" << endl;
+			cout << "Assign " << numAns << " point(s) for each answer below: " << endl;
 			for (int i = 0; i < numAns; i++) {
 				cin >> numPoint;
                 		cin.clear();
@@ -233,9 +233,9 @@ using namespace std;
 		cout << "Add Card Instructions:" << endl;
 		cout << "In this section, You will add questions to the game." << endl;
 		cout << "1. Create a question.\n";
-		cout << "2. Add 4-8 possible answers\n";
-		cout << "3. Assign points to each answer\n";
-		cout << "***The total points for each question should be 100\n" << endl;
+		cout << "2. Add 4-8 possible answers.\n";
+		cout << "3. Assign points to each answer.\n";
+		cout << "***The total points for each question should be 100.\n" << endl;
 	}
 
 	void Game::displayMenu()
