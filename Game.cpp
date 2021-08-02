@@ -7,6 +7,8 @@
 #include <iostream>
 #include <vector>
 #include <iterator>
+#include <stdlib.h>
+#include <time.h>
 
 using namespace std;
 
@@ -42,40 +44,59 @@ using namespace std;
 				string turn = team1;
 				vector <string> foundAnswers;
 				vector<int>answerPts;
-				
+				vector<int>UsedQuestions;
+				srand(time(0));
+				int currQuestion;
+				bool newQ;
 				for (int round = 0; round < cards.totalQuestions(); round++)
 				{
+					newQ=true;
+					do 
+					{ 
+						currQuestion = (rand() % (cards.totalQuestions() - 0 + 1)) + 0;
+						for (int i = 0; i < UsedQuestions.size(); i++)
+						{
+							if (currQuestion = UsedQuestions[i])
+								newQ = false;
+						}
+					} while (newQ==false);
+					UsedQuestions.push_back(currQuestion);
 					cout << "ROUND:" << round + 1 << endl;
 					int wrong = 0;
 					int correct = 0;
 					foundAnswers.clear();
 					answerPts.clear();
-					int ansLeft=cards.totalAnswers(round);
+					int ansLeft=cards.totalAnswers(currQuestion);
+				
 					do {
 						cout << "Team " << turn << ", it is your turn."<<endl;
-						cout << "Question " << round+1 << ": "<<cards.getQuestion(round) << endl;
-						cout << "There are " << cards.totalAnswers(round) << " possible answers." << endl;
+						cout << "Question " << round+1 << ": "<<cards.getQuestion(currQuestion) << endl;
+						cout << "There are " << cards.totalAnswers(currQuestion) << " possible answers." << endl;
 						cout << "Enter your answers below: " << endl;
 						getline(cin, answer);
 						cout << endl;
 							cin.clear();
 							cin.ignore(10000, '\n');
-						if (cards.isCorrect(round, answer))
+						if (cards.isCorrect(currQuestion, answer))
 						{
+							correct++;
 							cout << "Your answer is correct." << endl;
 							//display answer
-							foundAnswers.push_back ( answer);
-							answerPts.push_back(cards.getAnswerPoints(round, cards.getAnswerKey(round, answer)));
+							foundAnswers.push_back (answer);
+							answerPts.push_back(cards.getAnswerPoints(currQuestion, cards.getAnswerKey(currQuestion, answer)));
+							
 							ansLeft--;
+							
 							cout << "*****************************************"<< endl;
-							cout << ansLeft << " out of " << cards.totalAnswers(round) << " left." << endl;
+							cout << ansLeft << " out of " << cards.totalAnswers(currQuestion) << " left." << endl;
 							cout << "FOUND ANSWERS" << endl;
+							//cout << "Rank  " << "Answer       " << "Points  " << endl;
 							for (int i = 0; i < foundAnswers.size(); i++)
 							{
-								cout << foundAnswers[i] << endl;//display  found answers
+								cout <<foundAnswers[i] << ": " << answerPts[i] << endl;//display  found answers
 							}
 							cout << "*****************************************" << endl;
-							points[turn] += cards.getAnswerPoints(round, cards.getAnswerKey(round, answer));//adds points
+							points[turn] += cards.getAnswerPoints(round, cards.getAnswerKey(currQuestion, answer));//adds points
 						}
 						else
 						{
@@ -91,28 +112,29 @@ using namespace std;
 							cout << "Team " << turn << " can now steal!!" << endl;
 							//steal process
 								// ask question
-							cout << "Question " << round + 1 << ": " << cards.getQuestion(round) << endl;
-							cout << "There are " << cards.totalAnswers(round) << " possible answers." << endl;
+							cout << "Question " << round + 1 << ": " << cards.getQuestion(currQuestion) << endl;
+							cout << "There are " << cards.totalAnswers(currQuestion) << " possible answers." << endl;
 							cout << "Enter your answers below " << endl;
 								// guess 
 							getline(cin, answer);
 									cin.clear();
 									cin.ignore(10000, '\n');
-							if (cards.isCorrect(round, answer))
+							if (cards.isCorrect(currQuestion, answer))
 							{
+								correct++;
 								cout << "Your answer is correct." << endl;
-							//display answer
-							foundAnswers.push_back ( answer);
-							answerPts.push_back(cards.getAnswerPoints(round, cards.getAnswerKey(round, answer)));
-							ansLeft--;
-							cout << "*****************************************"<< endl;
-							cout << ansLeft << " out of " << cards.totalAnswers(round) << " left." << endl;
-							cout << "FOUND ANSWERS" << endl;
-							for (int i = 0; i < foundAnswers.size(); i++)
-							{
-								cout << foundAnswers[i] << endl;//display  found answers
-							}
-							cout << "*****************************************" << endl;
+								//display answer
+								foundAnswers.push_back ( answer);
+								answerPts.push_back(cards.getAnswerPoints(currQuestion, cards.getAnswerKey(currQuestion, answer)));
+								ansLeft--;
+								cout << "*****************************************"<< endl;
+								cout << ansLeft << " out of " << cards.totalAnswers(currQuestion) << " left." << endl;
+								cout << "FOUND ANSWERS" << endl;
+								for (int i = 0; i < foundAnswers.size(); i++)
+								{
+									cout << foundAnswers[i] <<": " << answerPts[i] << endl;//display  found answers
+								}
+								cout << "*****************************************" << endl;
 								//allocate points
 								points[turn] += cards.getAnswerPoints(round, cards.getAnswerKey(round, answer));
 								cout << turn << " wins the round!!" << endl;
@@ -125,7 +147,7 @@ using namespace std;
 							cout << turn << " has " << points[turn] << " points!" << endl;;
 						}
 						cout << "*****************************************" << endl;
-					} while ((wrong < 3) && (correct < cards.totalAnswers(round)));
+					} while ((wrong < 3) && (correct < cards.totalAnswers(currQuestion)));
 					/*repeats question until team guesses all answers
 					or answers incorrectly 3 times*/
 					
@@ -143,6 +165,7 @@ using namespace std;
 				}
 				cout << team1 << " has " << points[team1] << " total points." << endl;
 				cout << team2 << " has " << points[team2] << " total points. " << endl;
+				UsedQuestions.clear();
 			}
 			else if (menu == 3)//adds Card
 			{
