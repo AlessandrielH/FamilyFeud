@@ -147,7 +147,7 @@ using namespace std;
 			else if (menu == 3)//adds Card
 			{
 				createCards();
-				//cards.displayCards();**needs to be defined
+				cards.displayCards();
 			}
 			else if (menu == 4)//quit game
 			{
