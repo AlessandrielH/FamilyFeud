@@ -41,6 +41,7 @@ using namespace std;
 				points[team2] = 0;
 				string turn = team1;
 				vector <string> foundAnswers;
+				vector<int>answerPts;
 				
 				for (int round = 0; round < cards.totalQuestions(); round++)
 				{
@@ -48,6 +49,8 @@ using namespace std;
 					int wrong = 0;
 					int correct = 0;
 					foundAnswers.clear();
+					answerPts.clear();
+					int ansLeft=cards.totalAnswers(round);
 					do {
 						cout << "Team " << turn << ", it is your turn."<<endl;
 						cout << "Question " << round+1 << ": "<<cards.getQuestion(round) << endl;
@@ -62,7 +65,10 @@ using namespace std;
 							cout << "Your answer is correct." << endl;
 							//display answer
 							foundAnswers.push_back ( answer);
+							answerPts.push_back(cards.getAnswerPoints(round, cards.getAnswerKey(round, answer)));
+							ansLeft--;
 							cout << "*****************************************"<< endl;
+							cout << ansLeft << " out of " << cards.totalAnswers(round) << " left." << endl;
 							cout << "FOUND ANSWERS" << endl;
 							for (int i = 0; i < foundAnswers.size(); i++)
 							{
@@ -94,14 +100,19 @@ using namespace std;
 									cin.ignore(10000, '\n');
 							if (cards.isCorrect(round, answer))
 							{
-								foundAnswers.push_back(answer);
-								cout << "*****************************************" << endl;
-								cout << "FOUND ANSWERS" << endl;
-								for (int i = 0; i < foundAnswers.size(); i++)
-								{
-									cout << foundAnswers[i] << endl;//display  found answers
-								}
-								cout << "*****************************************" << endl;
+								cout << "Your answer is correct." << endl;
+							//display answer
+							foundAnswers.push_back ( answer);
+							answerPts.push_back(cards.getAnswerPoints(round, cards.getAnswerKey(round, answer)));
+							ansLeft--;
+							cout << "*****************************************"<< endl;
+							cout << ansLeft << " out of " << cards.totalAnswers(round) << " left." << endl;
+							cout << "FOUND ANSWERS" << endl;
+							for (int i = 0; i < foundAnswers.size(); i++)
+							{
+								cout << foundAnswers[i] << endl;//display  found answers
+							}
+							cout << "*****************************************" << endl;
 								//allocate points
 								points[turn] += cards.getAnswerPoints(round, cards.getAnswerKey(round, answer));
 								cout << turn << " wins the round!!" << endl;
