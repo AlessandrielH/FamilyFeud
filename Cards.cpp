@@ -10,15 +10,15 @@ using namespace std;
 
 Cards::Cards() {
 
-	question[0] = { {"questions","Name something you haven't done since high school gym class."} };
+	question[0] = { {"questions","Name something you haven\'t done since high school gym class."} };
 	answers[0] = { {"answers", {"Run a Mile","DodgeBall","Push-Ups","Sit-ups/Crunches","Lift Weights","Swim Laps", "Change in a Locker Room","Tennis","Exercise"}} };
-	question[1] = { {"questions", "If your dog ran away, name something you’d be surprised he took with him. "} };
+	question[1] = { {"questions", "If your dog ran away, name something you\’d be surprised he took with him. "} };
 	answers[1] = { {"answers", {"The Cat","Leash/Collar","Food/Bowl","His Bone","Clothes/Shoe","Bed/Pillow","Favorite Toy","Wallet/Money"}} };
 	question[2] = { {"questions", "Name something you find in a breakfast buffet. "} };
 	answers[2] = { {"answers", {"Eggs","Bacon","Sausage","Potatoes/Hashbrowns","Juice", "Coffee", "Melon", "Cereal"}} };
-	question[3] = { {"questions", "Name Marvel’s Avengers. "} };
+	question[3] = { {"questions", "Name Marvel\’s Avengers. "} };
 	answers[3] = { {"answers", {"Captain America","Iron Man","Black Panther","The Hulk","Thor","Black Widow","Spiderman","Hawkeye"}} };
-	question[4] = { {"questions", "In horror movies, name a place teenagers go where there’s always a killer on the loose. "} };
+	question[4] = { {"questions", "In horror movies, name a place teenagers go where there\’s always a killer on the loose. "} };
 	answers[4] = { {"answers", {"Cabin/Camp/Woods","Graveyard","Movie Theater", "Basement/Cellar", "Closet","Bathroom/Shower", "Bedroom/Bed", "A Party"}} };
 	question[5] = { {"questions", "Name a common candy bar component. "} };
 	answers[5] = { {"answers", {"Chocolate", "Peanuts", "Caramel", "Almonds", "Nougat", "Coconut"}} };
