@@ -49,6 +49,7 @@ using namespace std;
 				srand(time(0));
 				int currQuestion;
 				bool newQ;
+				bool steal = false;
 
 				for (int round = 0; round < cards.totalQuestions(); round++)
 				{
@@ -85,7 +86,7 @@ using namespace std;
 						if (cards.isCorrect(currQuestion, answer))
 						{
 							correct++;
-							cout << "Your answer is correct." << endl;
+							cout << "Your answer is CORRECT." << endl;
 							//display answer
 							foundAnswers.push_back(answer);
 							cout << "foundanswers pushed" << endl;
@@ -97,7 +98,7 @@ using namespace std;
 						else
 						{
 							wrong++;
-							cout << "Your answer is incorrect. " << endl;
+							cout << "Your answer is INCORRECT. " << endl;
 							cout << "This is strike " << wrong << "! " << endl; //shows user how many wrong answers (or strikes) they have
 						}
 
@@ -118,7 +119,8 @@ using namespace std;
 							if (cards.isCorrect(currQuestion, answer))
 							{
 								correct++;
-								cout << "Your answer is correct." << endl;
+								steal = true;
+								cout << "Your answer is CORRECT." << endl;
 								//display answer
 								foundAnswers.push_back(answer);
 								answerPts.push_back(cards.getAnswerPoints(currQuestion, cards.getAnswerKey(currQuestion, answer)));
@@ -130,20 +132,28 @@ using namespace std;
 							}
 							else
 							{
-								cout << "Your answer is incorrect. " << endl;
+								cout << "Your answer is INCORRECT. " << endl;
+								turn = changeTeam(turn, team1, team2);
 							}
 
 							//assign points to winner
 							if (turn == team1)
 							{
-								cout << team1 << "wins the round!" << endl;
+								cout << team1 << " wins the round!" << endl;
 								cout << team1 << " wins " << pointsPool << " points!!" << endl;
 								points[team1] += pointsPool;
 							}
 							else {
-								cout << team2 << "wins the round!!" << endl;
+								cout << team2 << " wins the round!!" << endl;
 								cout << team2 << " wins " << pointsPool << " points!!" << endl;
 								points[team2] += pointsPool;
+							}
+
+							//allows other team to answer first in the event of a steal
+							if (steal)
+							{
+								turn = changeTeam(turn, team1, team2);
+								steal = false;
 							}
 							
 							cout << team1 << " has " << points[team1] << " points!!" << endl;
