@@ -43,12 +43,13 @@ using namespace std;
 				points[team2] = 0;
 				int pointsPool = 0;
 				string turn = team1;
-				//vector <string> foundAnswers;
-				//vector<int>answerPts;
+				vector <string> foundAnswers;
+				vector<int>answerPts;
 				vector<int>UsedQuestions;
 				srand(time(0));
 				int currQuestion;
 				bool newQ;
+
 				for (int round = 0; round < cards.totalQuestions(); round++)
 				{
 					//gets random Question
@@ -90,7 +91,7 @@ using namespace std;
 							cout << "foundanswers pushed" << endl;
 							answerPts.push_back(cards.getAnswerPoints(currQuestion, cards.getAnswerKey(currQuestion, answer)));
 							ansLeft--;
-							displayBoard(currQuestion, ansLeft);
+							
 							pointsPool += cards.getAnswerPoints(currQuestion, cards.getAnswerKey(currQuestion, answer));//adds points
 						}
 						else
@@ -122,7 +123,7 @@ using namespace std;
 								foundAnswers.push_back(answer);
 								answerPts.push_back(cards.getAnswerPoints(currQuestion, cards.getAnswerKey(currQuestion, answer)));
 								ansLeft--;
-								displayBoard(currQuestion, ansLeft);
+								displayBoard(foundAnswers, answerPts,currQuestion, ansLeft);
 								//add points
 								pointsPool += cards.getAnswerPoints(currQuestion, cards.getAnswerKey(currQuestion, answer));
 								cout << turn << " wins the round!!" << endl;
@@ -148,7 +149,7 @@ using namespace std;
 							cout << team1 << " has " << points[team1] << " points!!" << endl;
 							cout << team2 << " has " << points[team2] << " points!!" << endl;
 						}
-						displayBoard(currQuestion, ansLeft);
+						displayBoard(foundAnswers, answerPts, currQuestion, ansLeft);
 						cout << "*****************************************" << endl;
 					} while ((wrong < 3) && (correct < cards.totalAnswers(currQuestion)));
 					/*repeats question until team guesses all answers
@@ -309,7 +310,7 @@ string Game::changeTeam(string turn, string t1, string t2)
 		return turn;
 	}
 
-void Game::displayBoard(int currQuestion, int ansLeft)
+void Game::displayBoard(vector<string> foundAnswers, vector<int>answerPts,int currQuestion, int ansLeft)
 {
 	cout << "*****************************************" << endl;
 	cout << cards.getQuestion(currQuestion) << endl;
