@@ -131,7 +131,7 @@ void Cards::displayCards()
 	int num = totalQuestions();
 	cout << "*****************************************" << endl;
 	cout << "Last 3 Questions Added" << endl;
-	for (num; num>totalQuestions()-4; num--)
+	for (num; num>totalQuestions()-3; num--)
 	{
 		cout << "Question: ";
 		cout << getQuestion(num - 1) << endl;
