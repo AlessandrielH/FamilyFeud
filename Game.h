@@ -11,8 +11,7 @@ class Game
 	private:
 		//initialize Cards Object
 		Cards cards;
-		vector <string> foundAnswers;
-		vector<int> answerPts;
+
 	public:
 		//Game();
 		//~Game();
@@ -22,6 +21,6 @@ class Game
 		void createCards();
 		string changeTeam(string, string, string);
 		void sortFoundAns(vector<string>, vector <int>, vector<int>);
-		void displayBoard(int, int);
+		void displayBoard(vector<string>, vector<int>,int, int);
 };
 #endif
