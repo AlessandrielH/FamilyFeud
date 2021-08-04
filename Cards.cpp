@@ -129,8 +129,8 @@ int Cards::getAnswerKey(int num, string ans) {
 void Cards::displayCards()
 {
 	int num = totalQuestions();
-	cout << "*****************************************" << endl;
-	cout << "Last 3 Questions Added" << endl;
+	cout << endl << "*****************************************" << endl<<endl;
+	cout << "Last 4 Questions Added" << endl;
 	for (num; num>totalQuestions()-3; num--)
 	{
 		cout << "Question: ";
@@ -142,7 +142,7 @@ void Cards::displayCards()
 			cout << "Points: ";
 			cout << getAnswerPoints(num - 1, n) << endl;
 		}
-		cout << "*****************************************" << endl;
+		cout << endl << "*****************************************" << endl;
 	}
-	cout << "*****************************************" << endl;
+	cout << endl<< "*****************************************" << endl;
 }
