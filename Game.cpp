@@ -81,16 +81,13 @@ using namespace std;
 						cout << "There are " << cards.totalAnswers(currQuestion) << " possible answers." << endl;
 						cout << "Enter your answers below: " << endl;
 						getline(cin, answer);
-						cout << endl;
 							cin.clear();
 							cin.ignore(10000, '\n');
 						if (cards.isCorrect(currQuestion, answer))
 						{
 							correct++;
 							cout << "Your answer is CORRECT." << endl;
-							//display answer
 							foundAnswers.push_back(answer);
-							cout << "foundanswers pushed" << endl;
 							answerPts.push_back(cards.getAnswerPoints(currQuestion, cards.getAnswerKey(currQuestion, answer)));
 							ansLeft--;
 							
@@ -105,6 +102,7 @@ using namespace std;
 
 						if (wrong == 3)
 						{
+							cout <<endl<< "*****************************************" << endl;
 							//The other team answers question
 							turn = changeTeam(turn, team1, team2);
 							cout << "Team " << turn << " can now steal!!" << endl;
@@ -129,44 +127,47 @@ using namespace std;
 								displayBoard(foundAnswers, answerPts,currQuestion, ansLeft);
 								//add points
 								pointsPool += cards.getAnswerPoints(currQuestion, cards.getAnswerKey(currQuestion, answer));
-								cout << turn << " wins the round!!" << endl;
+								cout << turn << " stole the round!!" << endl;
 							}
 							else
 							{
 								cout << "Your answer is INCORRECT. " << endl;
 								turn = changeTeam(turn, team1, team2);
-							}
-
-							//assign points to winner
-							if (turn == team1)
-							{
-								cout << team1 << " wins the round!" << endl;
-								cout << team1 << " wins " << pointsPool << " points!!" << endl;
-								points[team1] += pointsPool;
-							}
-							else {
-								cout << team2 << " wins the round!!" << endl;
-								cout << team2 << " wins " << pointsPool << " points!!" << endl;
-								points[team2] += pointsPool;
-							}
-
-							//allows other team to answer first in the event of a steal
-							if (steal)
-							{
-								turn = changeTeam(turn, team1, team2);
-								steal = false;
-							}
-							
-							cout << team1 << " has " << points[team1] << " points!!" << endl;
-							cout << team2 << " has " << points[team2] << " points!!" << endl;
+							}	
 						}
 						displayBoard(foundAnswers, answerPts, currQuestion, ansLeft);
 						cout << endl << "*****************************************" << endl;
 					} while ((wrong < 3) && (correct < cards.totalAnswers(currQuestion)));
 					/*repeats question until team guesses all answers
 					or answers incorrectly 3 times*/
+
+					//assign points to winner
+					if (turn == team1)
+					{
+						cout << team1 << " wins the round!" << endl;
+						cout << team1 << " wins " << pointsPool << " points!!" << endl;
+						points[team1] += pointsPool;
+					}
+					else {
+						cout << team2 << " wins the round!!" << endl;
+						cout << team2 << " wins " << pointsPool << " points!!" << endl;
+						points[team2] += pointsPool;
+					}
+
+					//allows other team to answer first in the event of a steal
+					if (steal)
+					{
+						turn = changeTeam(turn, team1, team2);
+						steal = false;
+					}
+
 					foundAnswers.clear();
 					answerPts.clear();
+
+					cout << endl << "*****************************************" << endl;
+					cout << team1 << " has " << points[team1] << " points!!" << endl;
+					cout << team2 << " has " << points[team2] << " points!!" << endl;
+					cout << endl << "*****************************************" << endl;
 
 					turn = changeTeam(turn, team1, team2);
 					cout << "Do you want to play another round? (Yes/No)" << endl;
@@ -249,6 +250,7 @@ using namespace std;
 
 			cout << "Assign " << numAns << " point(s) for each answer below: " << endl;
 			for (int i = 0; i < numAns; i++) {
+				cout << "Points " << i+1 << ": ";
 				cin >> numPoint;
                 		cin.clear();
                 		cin.ignore(10000, '\n');
