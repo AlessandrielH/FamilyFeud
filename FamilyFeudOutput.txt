@@ -1,3 +1,4 @@
+
 ****************************************
 *           Family Feud Game           *
 *                  By                  *
@@ -5,105 +6,609 @@
 *       P. Ndhlovu, &  K. Brown        *
 ****************************************
 * 1. Instructions                      *
-* 2. Play game                        *
-* 3. Enter new cards                  *
-* 4. Exit game                        *
+* 2. Play game                         *
+* 3. Enter new cards                   *
+* 4. Exit game                         *
+****************************************
+1
+
+INSTRUCTIONS
+
+Play Game Instructions:
+1. You will be presented with the number of possible answers.
+2. The question will be displayed.
+3. The team called will enter an answer to the question.
+4. Possible Responses:
+         ~  If the team answers correctly, that team will receive the points
+         for that answer and enter in a new guess.
+         ~  If the answer is wrong, that team will get 2 more chances to
+         correctly answer the question.
+         ~  If the answer, is still wrong after 2 chances, the other team
+         gets 1 chance to guess the answer.
+         ~  If the other team guesses correctly, they receive all of the points
+         from that round.
+         ~  If the other team guesses incorrectly, the original team keeps all
+         of their points.
+5. The players will be asked if they want to play another round.
+         ~  If they answer yes, the points will be carried over to the next
+         round.
+         ~  If they answer no, the game will return to the Menu.
+
+Add Card Instructions:
+In this section, You will add questions to the game.
+1. Create a question.
+2. Add 4-8 possible answers.
+3. Assign points to each answer.
+***The total points for each question should be 100.
+
+
+****************************************
+*           Family Feud Game           *
+*                  By                  *
+*   A. Harper, J. Minor, J. Minor,     *
+*       P. Ndhlovu, &  K. Brown        *
+****************************************
+* 1. Instructions                      *
+* 2. Play game                         *
+* 3. Enter new cards                   *
+* 4. Exit game                         *
+****************************************
+3
+
+
+How many cards do you want to create?
+1
+
+Enter question number 1.
+Name something found in a backpack
+
+How many possible answers do you want to add for this question?
+4
+
+Enter 4 possible answers below:
+Answer 1:books
+
+Answer 2:paper
+
+Answer 3:pencils
+
+Answer 4:laptop
+
+Assign 4 point(s) for each answer below:
+50
+30
+10
+10
+
+*****************************************
+
+Last 3 Questions Added
+Question: Name something found in a backpack
+Answer 1: books
+Points: 50
+Answer 2: paper
+Points: 30
+Answer 3: pencils
+Points: 10
+Answer 4: laptop
+Points: 10
+
+*****************************************
+Question: Name a reason people might change their name.
+Answer 1: Got Married
+Points: 60
+Answer 2: Their Name is Lame
+Points: 16
+Answer 3: Witness Protection
+Points: 13
+Answer 4: Divorce
+Points: 6
+
+*****************************************
+Question: When you call in sick to work or school, name something you do to make it believable.
+Answer 1: Cough
+Points: 68
+Answer 2: Hoarse
+Points: 18
+Answer 3: Fake Puke
+Points: 3
+Answer 4: Moan
+Points: 3
+Answer 5: Fake Doctor's Note
+Points: 2
+Answer 6: Sneeze
+Points: 2
+
+*****************************************
+
+*****************************************
+
+****************************************
+*           Family Feud Game           *
+*                  By                  *
+*   A. Harper, J. Minor, J. Minor,     *
+*       P. Ndhlovu, &  K. Brown        *
+****************************************
+* 1. Instructions                      *
+* 2. Play game                         *
+* 3. Enter new cards                   *
+* 4. Exit game                         *
+****************************************
+3
+
+
+How many cards do you want to create?
+0
+
+*****************************************
+
+Last 3 Questions Added
+Question: Name something found in a backpack
+Answer 1: books
+Points: 50
+Answer 2: paper
+Points: 30
+Answer 3: pencils
+Points: 10
+Answer 4: laptop
+Points: 10
+
+*****************************************
+Question: Name a reason people might change their name.
+Answer 1: Got Married
+Points: 60
+Answer 2: Their Name is Lame
+Points: 16
+Answer 3: Witness Protection
+Points: 13
+Answer 4: Divorce
+Points: 6
+
+*****************************************
+Question: When you call in sick to work or school, name something you do to make it believable.
+Answer 1: Cough
+Points: 68
+Answer 2: Hoarse
+Points: 18
+Answer 3: Fake Puke
+Points: 3
+Answer 4: Moan
+Points: 3
+Answer 5: Fake Doctor's Note
+Points: 2
+Answer 6: Sneeze
+Points: 2
+
+*****************************************
+
+*****************************************
+
+****************************************
+*           Family Feud Game           *
+*                  By                  *
+*   A. Harper, J. Minor, J. Minor,     *
+*       P. Ndhlovu, &  K. Brown        *
+****************************************
+* 1. Instructions                      *
+* 2. Play game                         *
+* 3. Enter new cards                   *
+* 4. Exit game                         *
 ****************************************
 2
+
 Enter team 1's name: Red
-Hello Red.
+Hello, Red.
 Enter team 2's name: Blue
-Hello Blue.
+Hello, Blue.
 *****************************************
 ROUND:1
-Team Red it is your turn
-Question 1: Name something you haven't done since high school gym class.
-There are 9 possible answers.
-Enter your answers below
+Team Red, it is your turn.
+Question 1: Name something that grows faster than you want it to.
+There are 6 possible answers.
+Enter your answers below:
+Nails
 
-Run a Mile
-Your answer is incorrect.
+
+Your answer is CORRECT.
+foundanswers pushed
+
+*****************************************
+Name something that grows faster than you want it to.
+
+5 out of 6 left.
+
+FOUND ANSWERS
+Points          Answers
+6               Nails
+*****************************************
+
+*****************************************
+Team Red, it is your turn.
+Question 1: Name something that grows faster than you want it to.
+There are 6 possible answers.
+Enter your answers below:
+Kids
+
+
+Your answer is INCORRECT.
 This is strike 1!
-*****************************************
-Team Red it is your turn
-Question 1: Name something you haven't done since high school gym class.
-There are 9 possible answers.
-Enter your answers below
-Run a Mile
 
-
-Your answer is correct.
 *****************************************
+Name something that grows faster than you want it to.
+
+5 out of 6 left.
+
 FOUND ANSWERS
-Run a Mile
+Points          Answers
+6               Nails
 *****************************************
+
 *****************************************
-Team Red it is your turn
-Question 1: Name something you haven't done since high school gym class.
-There are 9 possible answers.
-Enter your answers below
-Tennis
+Team Red, it is your turn.
+Question 1: Name something that grows faster than you want it to.
+There are 6 possible answers.
+Enter your answers below:
+Hair
 
 
-Your answer is correct.
-*****************************************
-FOUND ANSWERS
-Run a Mile
-Tennis
-*****************************************
-*****************************************
-Team Red it is your turn
-Question 1: Name something you haven't done since high school gym class.
-There are 9 possible answers.
-Enter your answers below
-Exercise
-
-
-Your answer is correct.
-*****************************************
-FOUND ANSWERS
-Run a Mile
-Tennis
-Exercise
-*****************************************
-*****************************************
-Team Red it is your turn
-Question 1: Name something you haven't done since high school gym class.
-There are 9 possible answers.
-Enter your answers below
-Rugby
-
-
-Your answer is incorrect.
+Your answer is INCORRECT.
 This is strike 2!
+
 *****************************************
-Team Red it is your turn
-Question 1: Name something you haven't done since high school gym class.
-There are 9 possible answers.
-Enter your answers below
-FoodFight
+Name something that grows faster than you want it to.
+
+5 out of 6 left.
+
+FOUND ANSWERS
+Points          Answers
+6               Nails
+*****************************************
+
+*****************************************
+Team Red, it is your turn.
+Question 1: Name something that grows faster than you want it to.
+There are 6 possible answers.
+Enter your answers below:
+Hair/Eyebrows
 
 
-Your answer is incorrect.
+Your answer is INCORRECT.
 This is strike 3!
 Team Blue can now steal!!
-Question 1: Name something you haven't done since high school gym class.
-There are 9 possible answers.
+Question 1: Name something that grows faster than you want it to.
+There are 6 possible answers.
 Enter your answers below
-DodgeBall
+Kids/Babies
+
+Your answer is CORRECT.
+
 *****************************************
+Name something that grows faster than you want it to.
+
+4 out of 6 left.
+
 FOUND ANSWERS
-Run a Mile
-Tennis
-Exercise
-DodgeBall
+Points          Answers
+6               Nails
+13              Kids/Babies
 *****************************************
-Blue has 23 points
+Blue wins the round!!
+Blue wins the round!!
+Blue wins 19 points!!
+Red has 0 points!!
+Blue has 19 points!!
+
+*****************************************
+Name something that grows faster than you want it to.
+
+4 out of 6 left.
+
+FOUND ANSWERS
+Points          Answers
+6               Nails
+13              Kids/Babies
+*****************************************
+
+*****************************************
+Do you want to play another round? (Yes/No)
+yes
+*****continue to next round*****
+ROUND:2
+Team Blue, it is your turn.
+Question 2: Name a common candy bar component.
+There are 6 possible answers.
+Enter your answers below:
+
+Nougat
+Your answer is INCORRECT.
+This is strike 1!
+
+*****************************************
+Name a common candy bar component.
+
+6 out of 6 left.
+
+FOUND ANSWERS
+Points          Answers
+***EMPTY***
+*****************************************
+
+*****************************************
+Team Blue, it is your turn.
+Question 2: Name a common candy bar component.
+There are 6 possible answers.
+Enter your answers below:
+Nougat
+
+
+Your answer is CORRECT.
+foundanswers pushed
+
+*****************************************
+Name a common candy bar component.
+
+5 out of 6 left.
+
+FOUND ANSWERS
+Points          Answers
+10              Nougat
+*****************************************
+
+*****************************************
+Team Blue, it is your turn.
+Question 2: Name a common candy bar component.
+There are 6 possible answers.
+Enter your answers below:
+Chocolate
+
+
+Your answer is CORRECT.
+foundanswers pushed
+
+*****************************************
+Name a common candy bar component.
+
+4 out of 6 left.
+
+FOUND ANSWERS
+Points          Answers
+10              Nougat
+36              Chocolate
+*****************************************
+
+*****************************************
+Team Blue, it is your turn.
+Question 2: Name a common candy bar component.
+There are 6 possible answers.
+Enter your answers below:
+Caramel
+
+
+Your answer is CORRECT.
+foundanswers pushed
+
+*****************************************
+Name a common candy bar component.
+
+3 out of 6 left.
+
+FOUND ANSWERS
+Points          Answers
+10              Nougat
+36              Chocolate
+15              Caramel
+*****************************************
+
+*****************************************
+Team Blue, it is your turn.
+Question 2: Name a common candy bar component.
+There are 6 possible answers.
+Enter your answers below:
+Peanuts
+
+
+Your answer is CORRECT.
+foundanswers pushed
+
+*****************************************
+Name a common candy bar component.
+
+2 out of 6 left.
+
+FOUND ANSWERS
+Points          Answers
+10              Nougat
+36              Chocolate
+15              Caramel
+22              Peanuts
+*****************************************
+
+*****************************************
+Team Blue, it is your turn.
+Question 2: Name a common candy bar component.
+There are 6 possible answers.
+Enter your answers below:
+Waffer
+
+
+Your answer is INCORRECT.
+This is strike 2!
+
+*****************************************
+Name a common candy bar component.
+
+2 out of 6 left.
+
+FOUND ANSWERS
+Points          Answers
+10              Nougat
+36              Chocolate
+15              Caramel
+22              Peanuts
+*****************************************
+
+*****************************************
+Team Blue, it is your turn.
+Question 2: Name a common candy bar component.
+There are 6 possible answers.
+Enter your answers below:
+Waffle
+
+
+Your answer is INCORRECT.
+This is strike 3!
+Team Red can now steal!!
+Question 2: Name a common candy bar component.
+There are 6 possible answers.
+Enter your answers below
+Pretzel
+
+Your answer is INCORRECT.
+Blue wins the round!!
+Blue wins 83 points!!
+Red has 0 points!!
+Blue has 102 points!!
+
+*****************************************
+Name a common candy bar component.
+
+2 out of 6 left.
+
+FOUND ANSWERS
+Points          Answers
+10              Nougat
+36              Chocolate
+15              Caramel
+22              Peanuts
+*****************************************
+
+*****************************************
+Do you want to play another round? (Yes/No)
+Yes
+*****continue to next round*****
+ROUND:3
+Team Red, it is your turn.
+Question 3: When you call in sick to work or school, name something you do to make it believable.
+There are 6 possible answers.
+Enter your answers below:
+
+Moan
+Your answer is INCORRECT.
+This is strike 1!
+
+*****************************************
+When you call in sick to work or school, name something you do to make it believable.
+
+6 out of 6 left.
+
+FOUND ANSWERS
+Points          Answers
+***EMPTY***
+*****************************************
+
+*****************************************
+Team Red, it is your turn.
+Question 3: When you call in sick to work or school, name something you do to make it believable.
+There are 6 possible answers.
+Enter your answers below:
+Maon
+
+
+Your answer is INCORRECT.
+This is strike 2!
+
+*****************************************
+When you call in sick to work or school, name something you do to make it believable.
+
+6 out of 6 left.
+
+FOUND ANSWERS
+Points          Answers
+***EMPTY***
+*****************************************
+
+*****************************************
+Team Red, it is your turn.
+Question 3: When you call in sick to work or school, name something you do to make it believable.
+There are 6 possible answers.
+Enter your answers below:
+Moan
+
+
+Your answer is CORRECT.
+foundanswers pushed
+
+*****************************************
+When you call in sick to work or school, name something you do to make it believable.
+
+5 out of 6 left.
+
+FOUND ANSWERS
+Points          Answers
+3               Moan
+*****************************************
+
+*****************************************
+Team Red, it is your turn.
+Question 3: When you call in sick to work or school, name something you do to make it believable.
+There are 6 possible answers.
+Enter your answers below:
+Cough
+
+
+Your answer is CORRECT.
+foundanswers pushed
+
+*****************************************
+When you call in sick to work or school, name something you do to make it believable.
+
+4 out of 6 left.
+
+FOUND ANSWERS
+Points          Answers
+3               Moan
+68              Cough
+*****************************************
+
+*****************************************
+Team Red, it is your turn.
+Question 3: When you call in sick to work or school, name something you do to make it believable.
+There are 6 possible answers.
+Enter your answers below:
+Doctor's Note
+
+
+Your answer is INCORRECT.
+This is strike 3!
+Team Blue can now steal!!
+Question 3: When you call in sick to work or school, name something you do to make it believable.
+There are 6 possible answers.
+Enter your answers below
+Lie
+
+Your answer is INCORRECT.
+Red wins the round!
+Red wins 71 points!!
+Red has 71 points!!
+Blue has 102 points!!
+
+*****************************************
+When you call in sick to work or school, name something you do to make it believable.
+
+4 out of 6 left.
+
+FOUND ANSWERS
+Points          Answers
+3               Moan
+68              Cough
+*****************************************
+
 *****************************************
 Do you want to play another round? (Yes/No)
 no
-Red has 29 total points
-Blue has 23 total points
+Red has 71 total points.
+Blue has 102 total points.
+
 ****************************************
 *           Family Feud Game           *
 *                  By                  *
@@ -111,7 +616,7 @@ Blue has 23 total points
 *       P. Ndhlovu, &  K. Brown        *
 ****************************************
 * 1. Instructions                      *
-* 2. Play game.                        *
-* 3. Enter new cards.                  *
-* 4. Exit game.                        *
+* 2. Play game                         *
+* 3. Enter new cards                   *
+* 4. Exit game                         *
 ****************************************
