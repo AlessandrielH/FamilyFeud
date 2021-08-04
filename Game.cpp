@@ -172,6 +172,8 @@ using namespace std;
 					turn = changeTeam(turn, team1, team2);
 					cout << "Do you want to play another round? (Yes/No)" << endl;
 					cin >> answer;
+						cin.clear();
+						cin.ignore(10000, '\n');
 					if(answer=="yes"||answer=="Yes"||answer=="YES")
 					{
 						cout << "*****continue to next round*****" << endl;
