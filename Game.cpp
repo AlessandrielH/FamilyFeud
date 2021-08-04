@@ -19,6 +19,7 @@ using namespace std;
 		do {
 			displayMenu();
 			cin >> menu;
+			cout<< endl;
 			if (menu == 1) //shows players game instructions
 			{
 				displayInstructions();
@@ -160,7 +161,7 @@ using namespace std;
 							cout << team2 << " has " << points[team2] << " points!!" << endl;
 						}
 						displayBoard(foundAnswers, answerPts, currQuestion, ansLeft);
-						cout << "*****************************************" << endl;
+						cout << endl << "*****************************************" << endl;
 					} while ((wrong < 3) && (correct < cards.totalAnswers(currQuestion)));
 					/*repeats question until team guesses all answers
 					or answers incorrectly 3 times*/
@@ -215,7 +216,7 @@ using namespace std;
 		vector<int> inpoints;
 		vector<string> inanswr;
 
-		cout << "How many cards do you want to create? " << endl;
+		cout << endl<< "How many cards do you want to create? " << endl;
 		cin >> numCard;
         	cin.clear();
         	cin.ignore(10000, '\n');
@@ -223,19 +224,19 @@ using namespace std;
 
 		for (int i = 0; i < numCard; i++) {
 			do {
-				cout << "Enter question number " << i + 1 << "." << endl;
+				cout <<endl<< "Enter question number " << i + 1 << "." << endl;
 				getline(cin, sentence);
                 	//cin.clear();
                 	//cin.ignore(10000, '\n');
 			} while (cards.verifyCard(sentence) == true);
 			cards.setQuestion(sentence);
 
-			cout << "How many possible answers do you want to add for this question? " << endl;
+			cout << endl<< "How many possible answers do you want to add for this question? " << endl;
 			cin >> numAns;
             		cin.clear();
             		cin.ignore(10000, '\n');
 
-			cout << "Enter " << numAns << " possible answers below: " << endl;
+			cout << endl << "Enter " << numAns << " possible answers below: " << endl;
 			for (int i = 0; i < numAns; i++) {
 				cout << "Answer " << i + 1<<":";
 				getline(cin, ans);
@@ -294,7 +295,7 @@ using namespace std;
 
 	void Game::displayMenu()
 	{
-		cout << "****************************************" << endl;
+		cout << endl<< "****************************************" << endl;
 		cout << "*           Family Feud Game           *" << endl;
 		cout << "*                  By                  *" << endl;
 		cout << "*   A. Harper, J. Minor, J. Minor,     *" << endl;
@@ -322,11 +323,11 @@ string Game::changeTeam(string turn, string t1, string t2)
 
 void Game::displayBoard(vector<string> foundAnswers, vector<int>answerPts,int currQuestion, int ansLeft)
 {
-	cout << "*****************************************" << endl;
+	cout << endl << "*****************************************" << endl;
 	cout << cards.getQuestion(currQuestion) << endl;
-	cout << ansLeft << " out of " << cards.totalAnswers(currQuestion) << " left." << endl;
-	cout << "FOUND ANSWERS" << endl;
-	cout << "Answer       " << "Points  " << endl;
+	cout << endl << ansLeft << " out of " << cards.totalAnswers(currQuestion) << " left." << endl;
+	cout << endl << "FOUND ANSWERS" << endl;
+	cout<<  "Points"  << "\t\t"<<"Answers"<< endl;
 	if (foundAnswers.empty())
 	{
 		cout << "***EMPTY***" << endl;
@@ -335,7 +336,7 @@ void Game::displayBoard(vector<string> foundAnswers, vector<int>answerPts,int cu
 	{
 		for (int i = 0; i < foundAnswers.size(); i++)
 		{
-			cout << foundAnswers[i] << ": " << answerPts[i] << endl;//display  found answers
+			cout << answerPts[i]  << "\t\t" <<  foundAnswers[i] << endl;//display found answers
 		}
 	}
 	cout << "*****************************************" << endl;
