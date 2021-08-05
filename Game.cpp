@@ -28,15 +28,26 @@ using namespace std;
 			{
 				string answer;
 				string team1, team2;
+				string teamnameErr= " "; //error case for invalid string input for the teams name
 				map<string, int> points;
+				
 
-				cout << "Enter team 1's name: ";
-				cin >>team1;
+				cout << "Enter Team 1's Name: ";
+				cin >>team1<<endl;
+				while(team1.size()>0 || team1==teamnameErr){
+					cout<<"Invalid Input! Enter Team 1's Name: ";
+					cin>>team1;
+				}//checks to make sure input is not blank
 				cout << "Hello, " << team1 << ". " << endl;
-				cout << "Enter team 2's name: ";
-				cin>>team2;
+				cout << "Enter Team 2's Name: ";
+				cin>>team2<<endl;
 					cin.clear();
 					cin.ignore(10000, '\n');
+				while(team2.size()>0 || team2==teamnameErr){
+					cout<<"Invalid Input! Enter Team s's Name: ";
+					cin>>team2;
+				}//checks to make sure input is not blank
+				
 				cout << "Hello, " << team2 << ". " << endl;
 				cout << "*****************************************" << endl;
 
@@ -68,7 +79,7 @@ using namespace std;
 					} while (newQ==false);
 					UsedQuestions.push_back(currQuestion);
 
-					cout << "ROUND:" << round + 1 << endl;
+					cout << "ROUND: " << round + 1 << endl;
 					int wrong = 0;
 					int correct = 0;
 					pointsPool = 0;
@@ -171,9 +182,19 @@ using namespace std;
 
 					turn = changeTeam(turn, team1, team2);
 					cout << "Do you want to play another round? (Yes/No)" << endl;
-					cin >> answer;
+					while (true)
+					{
+					    cin >> answer;
+					    
+					    for (char& ch : answer) ch = tolower(ch);
+					    if (answer != "yes" && answer != "no")
+						cout << "Invalid input, try again: ";
 						cin.clear();
-						cin.ignore(10000, '\n');
+					    	cin.ignore(10000, '\n');
+					    else
+						break;
+					
+						
 					if(answer=="yes"||answer=="Yes"||answer=="YES")
 					{
 						cout << "*****continue to next round*****" << endl;
